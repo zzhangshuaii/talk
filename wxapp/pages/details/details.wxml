@@ -11,9 +11,9 @@
             <view class='user-name flex-grow-0 flex-y-center'>
                 {{data.user_info.nickname}}
             </view>
-            <view class='user-level flex-grow-0 flex-y-center'>
+            <!--view class='user-level flex-grow-0 flex-y-center'>
                 Lv 1
-            </view>
+            </view-->
         </view>
         <view class='time flex-grow-0 flex-y-center'>
             {{data.word_time}}
@@ -204,4 +204,4 @@
         发送
     </view>
 </view>
-<include src="/common/home.wxml"/>
+<!--include src="/common/home.wxml"/-->

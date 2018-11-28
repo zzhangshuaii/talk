@@ -24,21 +24,22 @@
 			"current": -1,
 			"list": []
 		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
 		"plugin": {
 			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
-					"name": "list",
-					"pathName": "pages/list/list"
+					"id": 0,
+					"name": "index",
+					"pathName": "pages/index/indexbak/index",
+					"query": ""
 				}
 			]
 		}

@@ -22,7 +22,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#292C33",
     "navigationBarTitleText": "上科大Talk",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "backgroundColor": "#FFFFFF",
@@ -38,8 +39,8 @@
       {
         "pagePath": "pages/post/post",
         "text": "发帖",
-        "iconPath": "/images/index.png",
-        "selectedIconPath": "/images/index-active.png"
+        "iconPath": "/images/post.png",
+        "selectedIconPath": "/images/post.png"
       },
       {
         "pagePath": "pages/user/user",

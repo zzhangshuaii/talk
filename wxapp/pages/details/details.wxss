@@ -180,12 +180,12 @@
 
 .footer{
   position: fixed;
-  bottom: 0;
+  bottom: 0rpx;
   left: 0;
   width: 100%;
   border-top:1rpx solid #e2e2e2;
   /* padding: 24rpx 0; */
-  height: 100rpx;
+  height: 130rpx;
   background-color: #fff;
 }
 .footer button{

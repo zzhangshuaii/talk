@@ -10,9 +10,9 @@
           <view class='choice-user-name flex-grow-0 flex-y-center'>
             {{item.nickname}}
           </view>
-          <view class='choice-user-level flex-grow-0 flex-y-center'>
+          <!--view class='choice-user-level flex-grow-0 flex-y-center'>
             Lv1
-          </view>
+          </view-->
         </view>
         <view class='choice-user-left flex-grow-1 flex-row' wx:if="{{item.admin_id == 1}}">
           <view class='choice-user-pic flex-grow-0 flex-y-center'>

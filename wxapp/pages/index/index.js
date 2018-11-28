@@ -20,6 +20,8 @@ Page({
   onLoad: function (options) {
     var page = this;
     var type = "2";//options.type;
+
+    this.data.special = []
     pageNum = 1;
     switch (type) {
       case "1":
@@ -47,6 +49,15 @@ Page({
     page.getListInfo();
   },
 
+  //下拉刷新
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+
+    this.onLoad()
+
+    wx.hideNavigationBarLoading() //完成停止加载
+    wx.stopPullDownRefresh() //停止下拉刷新
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -72,13 +83,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
 
   },
 
@@ -114,6 +118,7 @@ Page({
    * 获取列表数据
    */
   getListInfo: function () {
+    //console.log("cccccccccccccccccccccccccccccccc");
     var page = this;
     app.request({
       url: url,
@@ -156,6 +161,7 @@ Page({
       }
     });
   },
+ 
   /**
    * 前往文章详情
    */
