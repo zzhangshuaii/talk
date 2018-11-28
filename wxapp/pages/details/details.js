@@ -98,7 +98,7 @@ Page({
         id: options.id,
       },
       success: function (res) {
-        //console.log(res);
+        console.log(res);
         if (res.code == 0) {
           var posts_content = res.data.posts_content;
           wxParse.wxParse("detail", "html", posts_content, page);

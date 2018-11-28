@@ -118,13 +118,14 @@ Page({
    * 获取列表数据
    */
   getListInfo: function () {
-    //console.log("cccccccccccccccccccccccccccccccc");
+    
     var page = this;
     app.request({
       url: url,
       method: 'get',
       data: { page: pageNum, lable: label },
       success: function (res) {
+        console.log("--------------index page data-------------------------");
         console.log(res);
         if (res.code == 0) {
           var special = page.data.special.concat(res.data.list);

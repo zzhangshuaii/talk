@@ -20,9 +20,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#292C33",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "上科大Talk",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "backgroundColor": "#FFFFFF",

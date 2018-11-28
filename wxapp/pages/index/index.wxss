@@ -40,7 +40,7 @@
 .choice-user-name{
   font-size: 10pt;
   margin-right: 10rpx;
-  color: #00c4cd;
+  color: #778087;
 }
 .choice-user-level{
   font-size: 7pt;

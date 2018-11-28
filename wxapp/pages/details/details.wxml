@@ -1,53 +1,53 @@
 <!--pages/details/details.wxml-->
 <view class='body'>
-    <view class='title flex-row'>
-        {{data.posts_title}}
-    </view>
-    <view class='flex-row subtitle' wx:if="{{data.admin_id != 1}}">
-        <view class='user-info flex-grow-1 flex-row flex-y-center'>
-            <view class='user-pic flex-grow-0 flex-y-center'>
-                <image src='{{data.user_info.avatar}}'></image>
-            </view>
-            <view class='user-name flex-grow-0 flex-y-center'>
-                {{data.user_info.nickname}}
-            </view>
-            <!--view class='user-level flex-grow-0 flex-y-center'>
+  <view class='title flex-row'>
+    {{data.posts_title}}
+  </view>
+  <view class='flex-row subtitle' wx:if="{{data.admin_id != 1}}">
+    <view class='user-info flex-grow-1 flex-row flex-y-center'>
+      <view class='user-pic flex-grow-0 flex-y-center'>
+        <image src='{{data.user_info.avatar}}'></image>
+      </view>
+      <view class='user-name flex-grow-0 flex-y-center'>
+        {{data.user_info.nickname}}
+      </view>
+      <!--view class='user-level flex-grow-0 flex-y-center'>
                 Lv 1
             </view-->
-        </view>
-        <view class='time flex-grow-0 flex-y-center'>
-            {{data.word_time}}
-        </view>
     </view>
-    <view class='flex-row subtitle' wx:if="{{data.admin_id == 1}}">
-        <view class='user-info flex-grow-1 flex-row flex-y-center'>
-            <view class='user-pic flex-grow-0 flex-y-center'>
-                <image src='/images/admin.png'></image>
-            </view>
-            <view class='user-name flex-grow-0 flex-y-center'>
-                admin
-            </view>
-            <!--       <view class='user-level flex-grow-0'>
+    <view class='time flex-grow-0 flex-y-center'>
+      {{data.word_time}}
+    </view>
+  </view>
+  <view class='flex-row subtitle' wx:if="{{data.admin_id == 1}}">
+    <view class='user-info flex-grow-1 flex-row flex-y-center'>
+      <view class='user-pic flex-grow-0 flex-y-center'>
+        <image src='/images/admin.png'></image>
+      </view>
+      <view class='user-name flex-grow-0 flex-y-center'>
+        admin
+      </view>
+      <!--       <view class='user-level flex-grow-0'>
                     Lv 1
                   </view>   -->
-        </view>
-        <view class='time flex-grow-0 flex-y-center'>
-            {{data.word_time}}
-        </view>
     </view>
+    <view class='time flex-grow-0 flex-y-center'>
+      {{data.word_time}}2
+    </view>
+  </view>
 
-    <view class='details'>
-        <import src="../../wxParse/wxParse.wxml"/>
-        <template is="wxParse" data="{{wxParseData:detail.nodes}}"/>
-    </view>
-    <view class='details-images-list'>
-        <block wx:for="{{detailsImg}}">
-            <view class='details-images' data-key='{{index}}' bindtap='showBigImages'>
-                <image src='{{item}}'></image>
-            </view>
-        </block>
-    </view>
-    <!--view class='label flex-row' wx:if="{{data.labels.length >0}}">
+  <view class='details'>
+    <import src="../../wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:detail.nodes}}" />
+  </view>
+  <view class='details-images-list'>
+    <block wx:for="{{detailsImg}}">
+      <view class='details-images' data-key='{{index}}' bindtap='showBigImages'>
+        <image src='{{item}}'></image>
+      </view>
+    </block>
+  </view>
+  <!--view class='label flex-row' wx:if="{{data.labels.length >0}}">
         <view class='label-title flex-grow-0'>
             标签：
         </view>
@@ -57,7 +57,7 @@
             </view>
         </view>
     </view-->
-    <!--view class='flex-row appreciate flex-y-center flex-x-center'>
+  <!--view class='flex-row appreciate flex-y-center flex-x-center'>
         <view class=' flex-grow-0 flex-y-center flex-x-center' bindtap='goToAppreciate'>
             <view class='appreciate-icon flex-y-center'>
                 <image src='/images/appreciate-icon.png'></image>
@@ -67,20 +67,19 @@
             </view>
         </view>
     </view-->
-    <view class='appreciate-user flex-row flex-y-center flex-x-center' wx:if="{{data.admireNum>=1}}">
-        <view class='flex-grow-0 flex-y-center flex-x-center' bindtap='goToAppreciateList'>
-            <view class='appreciate-user-pic flex-y-center'>
-                <block wx:for="{{data.admireUser}}" wx:for-item="admire">
-                    <image src='{{admire.avatar}}'></image>
-                </block>
-            </view>
-            <view class='appreciate-user-text flex-y-center'>
-                已有
-                <text>{{data.admireNum}}</text>
-                贴友奖励了{{data.admireTotalMoney}}元 >
-            </view>
-        </view>
+  <view class='appreciate-user flex-row flex-y-center flex-x-center' wx:if="{{data.admireNum>=1}}">
+    <view class='flex-grow-0 flex-y-center flex-x-center' bindtap='goToAppreciateList'>
+      <view class='appreciate-user-pic flex-y-center'>
+        <block wx:for="{{data.admireUser}}" wx:for-item="admire">
+          <image src='{{admire.avatar}}'></image>
+        </block>
+      </view>
+      <view class='appreciate-user-text flex-y-center'>
+        已有
+        <text>{{data.admireNum}}</text> 贴友奖励了{{data.admireTotalMoney}}元 >
+      </view>
     </view>
+  </view>
 </view>
 
 <!--view class='relevant' wx:if="{{data.relevant.length > 0}}">
@@ -112,44 +111,43 @@
   </view>
 </view-->
 <view class='comment-top flex-row flex-y-center'>
-    <view class='flex-grow-0'>
-        最新评论
-    </view>
+  <view class='flex-grow-0'>
+    最新评论
+  </view>
 </view>
 <view class='comment-list'>
-    <view class='comment-item' wx:for="{{comments}}" bindtap='showCoemment' data-c_id='{{item.id}}'
-          data-id='{{item.uid}}'>
-        <view class='comment-user flex-row flex-y-center'>
-            <view class='comment-user-info flex-grow-1 flex-row'>
-                <view class='comment-user-pic flex-grow-0'>
-                    <image src='{{item.avatar}}'></image>
-                </view>
-                <view class='flex-grow-1 flex-col'>
-                    <view class='comment-user-name flex-grow-1 flex-y-center'>
-                        {{item.nickname}}
-                    </view>
-                    <view class='comment-user-time flex-grow-1 flex-row flex-y-center'>
-                        <view class='comment-floor flex-grow-0'>
-                            {{index+1}}楼
-                        </view>
-                        <view class='flex-grow-0'>
-                            {{item.createtime}}
-                        </view>
-                    </view>
-                </view>
-            </view>
+  <view class='comment-item' wx:for="{{comments}}" bindtap='showCoemment' data-c_id='{{item.id}}' data-id='{{item.uid}}'>
+    <view class='comment-user flex-row flex-y-center'>
+      <view class='comment-user-info flex-grow-1 flex-row'>
+        <view class='comment-user-pic flex-grow-0'>
+          <image src='{{item.avatar}}'></image>
         </view>
-        <view class='comment-center'>
-            <view class="comment-text-to" wx:if="{{item.to_user}}">@{{item.to_user}}</view>
-            <view class='flex-row comment-text'>
-                {{item.content}}
+        <view class='flex-grow-1 flex-col'>
+          <view class='comment-user-name flex-grow-1 flex-y-center'>
+            {{item.nickname}}
+          </view>
+          <view class='comment-user-time flex-grow-1 flex-row flex-y-center'>
+            <view class='comment-floor flex-grow-0'>
+              {{index+1}}楼
             </view>
+            <view class='flex-grow-0'>
+              {{item.createtime}}
+            </view>
+          </view>
         </view>
+      </view>
     </view>
+    <view class='comment-center'>
+      <view class="comment-text-to" wx:if="{{item.to_user}}">@{{item.to_user}}</view>
+      <view class='flex-row comment-text'>
+        {{item.content}}
+      </view>
+    </view>
+  </view>
 </view>
 <view style='height:100rpx;'></view>
 <view class='footer flex-row flex-y-center'>
-    <!-- <view class='flex-grow-1 image-btn flex-y-center flex-x-center' wx:if="{{data.collection}}">
+  <!-- <view class='flex-grow-1 image-btn flex-y-center flex-x-center' wx:if="{{data.collection}}">
       <image src='/images/collection-icon-active.png'></image>
     </view>
     <view class='flex-grow-1 image-btn flex-y-center flex-x-center' wx:else bindtap='saveCollection'>
@@ -168,40 +166,39 @@
     <button class='image-btn flex-grow-1 flex-y-center flex-x-center' open-type="share">
       <image src='/images/share-icon.png' bindtap='imageBtn'></image>
     </button> -->
-    <view class='footer-post flex-grow-1 flex-y-center' bindtap='showCoemment' data-id='0'>
-        发表评论...
+  <view class='footer-post flex-grow-1 flex-y-center' bindtap='showCoemment' data-id='0'>
+    发表评论...
+  </view>
+  <view style='height:100%;' class='flex-grow-1 flex-y-center flex-row'>
+    <view class='flex-grow-1 flex-y-center footer-item'>
+      <image src='/images/comment-details-footer.png'></image>
+      <view>{{data.comment_nums}}</view>
     </view>
-    <view style='height:100%;' class='flex-grow-1 flex-y-center flex-row'>
-        <view class='flex-grow-1 flex-y-center footer-item'>
-            <image src='/images/comment-details-footer.png'></image>
-            <view>{{data.comment_nums}}</view>
-        </view>
-        <view class='flex-grow-1 flex-y-center footer-item' wx:if="{{data.like}}">
-            <image src='/images/good-details-footer-active.png'></image>
-            <view>{{data.posts_like}}</view>
-        </view>
-        <view class='flex-grow-1 flex-y-center footer-item' wx:else bindtap='saveLike'>
-            <image src='/images/good-details-footer.png'></image>
-            <view>{{data.posts_like}}</view>
-        </view>
-        <view class='flex-grow-1 footer-item flex-y-center' wx:if="{{data.collection}}">
-            <image src='/images/collection-icon-active.png'></image>
-        </view>
-        <view class='flex-grow-1 flex-y-center footer-item' wx:else bindtap='saveCollection'>
-            <image src='/images/collection-icon.png'></image>
-        </view>
-        <button class='flex-grow-1 flex-y-center footer-item' open-type="share">
-            <image src='/images/share-details-footer.png'></image>
-        </button>
+    <view class='flex-grow-1 flex-y-center footer-item' wx:if="{{data.like}}">
+      <image src='/images/good-details-footer-active.png'></image>
+      <view>{{data.posts_like}}</view>
     </view>
+    <view class='flex-grow-1 flex-y-center footer-item' wx:else bindtap='saveLike'>
+      <image src='/images/good-details-footer.png'></image>
+      <view>{{data.posts_like}}</view>
+    </view>
+    <view class='flex-grow-1 footer-item flex-y-center' wx:if="{{data.collection}}">
+      <image src='/images/collection-icon-active.png'></image>
+    </view>
+    <view class='flex-grow-1 flex-y-center footer-item' wx:else bindtap='saveCollection'>
+      <image src='/images/collection-icon.png'></image>
+    </view>
+    <button class='flex-grow-1 flex-y-center footer-item' open-type="share">
+      <image src='/images/share-details-footer.png'></image>
+    </button>
+  </view>
 </view>
 <view class="comment-play flex-row flex-y-center" wx:if='{{show_comment}}'>
-    <view class="comment-input flex-grow-1 flex-y-center">
-        <input placeholder="写评论..." focus="false" value="{{commentText}}" type="text" bindinput="commentTixtTab"
-               placeholder-class="comment-input-class" bindblur="hiddCommentPlay" confirm-type="发送"/>
-    </view>
-    <view class="comment-play-btn flex-grow-0 flex-y-center flex-x-center" bindtap='sendCommentText'>
-        发送
-    </view>
+  <view class="comment-input flex-grow-1 flex-y-center">
+    <input placeholder="写评论..." focus="false" value="{{commentText}}" type="text" bindinput="commentTixtTab" placeholder-class="comment-input-class" bindblur="hiddCommentPlay" confirm-type="发送" />
+  </view>
+  <view class="comment-play-btn flex-grow-0 flex-y-center flex-x-center" bindtap='sendCommentText'>
+    发送
+  </view>
 </view>
 <!--include src="/common/home.wxml"/-->
