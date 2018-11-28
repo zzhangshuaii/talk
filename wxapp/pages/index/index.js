@@ -1,183 +1,138 @@
-//index.js
-//获取应用实例
-const app = getApp()
+// pages/list/list.js
+const app = getApp();
+var url = '';
 var pageNum = 1;
+var label = '';
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    index: 1,
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg',
-    ],
-    indicatorDots: true,
-    autoplay: true,
-    interval: 5000,
-    duration: 1000,
-    special:[],
-    showLoading:false,
+    special: [],
+    showLoading: false,
     showNoContent: false,
-    Ads: {
-      Ads: [],
-      adStyle: '',
-      isShow: '',
-      height: '',
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var page = this;
+    var type = "2";//options.type;
+    pageNum = 1;
+    switch (type) {
+      case "1":
+        url = 'article_list/istjArticle'; // 推荐
+        break;
+      case "2":
+        url = 'article_list/newArticle';  // 最新
+        break;
+      case "3":
+        url = 'article_list/labelArticle';  // 根据标签进入列表
+        label = options.label;
+        break;
+      default:
+        console.log("default");
     }
-  },
-  onLoad: function () {
-    var page = this;
-    page.getIndexInfo();
-    page.getADSList();
-  },
-  /**
-   * 获取广告
-   */
-  getADSList: function () {
-    var _this = this;
-    app.request({
-      url: "ads/getAdsList",
-      method: 'get',
-      data: {
-        position: 'index'
-      },
-      success(result) {
-        if (result.code == 0) {
-          _this.setData({
-            Ads: result.data,
-          })
-          console.log(_this.data.Ads);
-        } else {
-          _this.setData({
-            isShow: true,
-          })
-        }
-      }
-    })
-  },
-  /**
- * 页面相关事件处理函数--监听用户下拉动作
- */
-  onPullDownRefresh: function () {
-      var page = this;
-      if(page.data.index == 1){
-          page.getIndexInfo();
-      }else{
-          pageNum = 1;
-          page.setData({
-              special: [],
-          })
-          page.getSpecial(pageNum);
-      }
-      wx.stopPullDownRefresh();
-  },
-  topbartoggle:function(e){
-    var page = this;
-    var id = e.target.dataset.id;
-    if (id==2){
-      pageNum = 1;
-      page.setData({
-        special: [],
-      })
-      page.getSpecial(pageNum);
-    }
-    this.setData({
-      index: id,
-    });
-  },  
-  /**
-   * 前往发帖
-   */
-  goToPost: function (e) {
-    wx.navigateTo({
-      url: '/pages/post/post',
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
-    })
-  },
-  /**
-   * 获取首页精选信息
-   */
-  getIndexInfo:function(e){
-    var page = this;
-    app.request({
-      url: 'index/index',
-      method: 'get',
+
+    wx.getStorage({
+      key: 'wxapp_name',
       success: function (res) {
-        console.log(res);
-        if (res.code == 0) {
-          page.setData({
-            imgUrls:res.data.banner,
-            choice:res.data.choice,
-            newest:res.data.newest,
-            float_window:res.data.float_window,
-          });
-          wx.setStorage({
-              key: "wxapp_name",
-              data: res.data.wxapp_name ? res.data.wxapp_name:'上科大Talk',
-          });
-          wx.setNavigationBarTitle({
-              title: res.data.wxapp_name ? res.data.wxapp_name : '上科大Talk',
-          });
-        } else {
-          wx.showModal({
-            title: '提示',
-            content: res.msg,
-            showCancel: false,
-            success: function (res) {
-              if (res.confirm) {
-                console.log('用户点击确定')
-              }
-            }
-          })
-        }
-      },
-      complete: function () {
-        setTimeout(function () {
-          // 延长一秒取消加载动画
-          wx.hideLoading();
-        }, 1000);
+        wx.setNavigationBarTitle({
+          title: res.data
+        });
       }
     });
+    page.getListInfo();
   },
+
   /**
-   * 前往文章详情
+   * 生命周期函数--监听页面初次渲染完成
    */
-  goToDetails: function (e)
-  {
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
     var page = this;
-    var id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/pages/details/details?id='+id,
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
+    if (page.data.showNoContent) {
+      return;
+    }
+    page.setData({
+      showLoading: true,
     });
+    if (page.data.total_page <= pageNum) {
+      page.setData({
+        showLoading: false,
+        showNoContent: true,
+      });
+      return;
+    }
+    pageNum += 1;
+    page.getListInfo();
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   },
   /**
-   * 获取专题列表
+   * 获取列表数据
    */
-  getSpecial: function (pageNum){
-    console.log(pageNum);
+  getListInfo: function () {
     var page = this;
     app.request({
-      url: 'article_list/special',
+      url: url,
       method: 'get',
-      data: {page:pageNum},
+      data: { page: pageNum, lable: label },
       success: function (res) {
         console.log(res);
         if (res.code == 0) {
           var special = page.data.special.concat(res.data.list);
-          
+
           page.setData({
             special: special,
             total: res.data.total,
             total_page: res.data.total_page,
             showLoading: false,
           });
-          if (res.data.total_page==pageNum){
+          if (res.data.total_page == pageNum) {
             page.setData({
-              showNoContent:true,
+              showNoContent: true,
             });
           }
         } else {
@@ -202,40 +157,16 @@ Page({
     });
   },
   /**
-   * 页面上拉触底事件的处理函数
+   * 前往文章详情
    */
-  onReachBottom: function () {
+  goToDetails: function (e) {
     var page = this;
-    if (page.data.showNoContent){
-      return;
-    }
-    page.setData({
-      showLoading:true,
-    });
-    if (page.data.total_page<=pageNum){
-      page.setData({
-        showLoading: false,
-        showNoContent:true,
-      });
-      return;
-    }
-    pageNum += 1;
-    page.getSpecial(pageNum);
-  },
-  /**
-   * 前往列表页
-   */
-  goToList:function(e) {
-    var page = this;
-    var type = e.currentTarget.dataset.type;
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/list/list?type='+type,
-    })
+      url: '/pages/details/details?id=' + id,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    });
   },
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    },
-})
+});

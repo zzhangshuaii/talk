@@ -1,8 +1,1 @@
-{
-    "enablePullDownRefresh": true,
-    "backgroundTextStyle": "dark",
-    "usingComponents": {
-      "Ads": "/component/ads"
-    }
-    
-}
+{}

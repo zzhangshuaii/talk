@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.4.0",
 	"appid": "wx883295ba2d8b2e2b",
-	"projectname": "bbb",
+	"projectname": "talk",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -24,22 +24,21 @@
 			"current": -1,
 			"list": []
 		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
-		"miniprogram": {
+		"plugin": {
 			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
 			"list": [
 				{
-					"id": 0,
-					"name": "userinfo",
-					"pathName": "pages/auth/index",
-					"query": ""
+					"id": -1,
+					"name": "list",
+					"pathName": "pages/list/list"
 				}
 			]
 		}

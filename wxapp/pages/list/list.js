@@ -19,7 +19,7 @@ Page({
    */
   onLoad: function (options) {
       var page = this;
-      var type = options.type;
+      var type = "2";//options.type;
       pageNum = 1;
       switch ( type ) {
           case "1":

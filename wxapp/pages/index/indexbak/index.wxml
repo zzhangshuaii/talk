@@ -1,0 +1,343 @@
+<view class='body'>
+  <view class='title flex-row'>
+    <view class="go flex-grow-1 flex-x-center flex-y-center {{index == 1 ? 'active' : ''}}" data-id='1'  bindtap="topbartoggle" style="">精选</view>
+    <view class="go flex-grow-1 flex-x-center flex-y-center {{index == 2 ? 'active' : ''}}" data-id='2' bindtap="topbartoggle" style="">专题</view>
+    <!-- <view class="go flex-grow-1 flex-x-center flex-y-center {{index == 3 ? 'active' : ''}}" data-id='3' bindtap="topbartoggle" style="">热门</view> -->
+  </view>
+
+  <!-- 精选开始 -->
+  <block wx:if="{{index==1}}">
+    <view class='banner'>
+      <swiper class=''indicator-active-color="#00C4CD" indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item.img}}" class="slide-image"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class='choice-title flex-y-center flex-row'>
+      <view class='flex-grow-1 choice-title-center flex-x-center'>
+        <view class='flex-y-center'> —</view>
+        <view class='flex-y-center'><image src='/images/selected-icon.png'></image></view>
+        <view class='flex-y-center' style='margin-right:34rpx;'>精选</view>   
+        <view class='flex-y-center'> —</view>
+      </view>
+      <view class='flex-grow-0 flex-row choice-title-right' data-type='1' bindtap='goToList'>
+        <view class='flex-grow-1 flex-y-center'>
+          更多
+        </view>
+        <view class='flex-grow-1 flex-y-center'>
+          <image src='/images/right-icon.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='choice-list'>
+      <block wx:for="{{choice}}">
+        <view class='choice-item flex-col' wx:if="{{item.admin_id != 1}}" bindtap="goToDetails" data-id="{{item.id}}">
+          <!-- <view class='choice-user flex-grow-0 flex-row'>
+            <view class='choice-user-left flex-grow-1 flex-row'>
+              <view class='choice-user-pic flex-grow-0 flex-y-center'>
+                <image src='http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'></image>
+              </view>
+              <view class='choice-user-name flex-grow-0 flex-y-center'>
+                刷马桶少年
+              </view>
+              <view class='choice-user-level flex-grow-0 flex-y-center'>
+                Lv100
+              </view>
+            </view>
+            <view class='flex-grow-0 choice-user-right flex-y-center'>
+              21分钟前
+            </view>
+          </view> -->
+          <view class='flex-grow-1 flex-row'>
+            <view class='flex-grow-1 choice-item-left flex-col'>
+              <view class='choice-item-title flex-grow-1 flex-row'>
+                  {{item.posts_title}}
+              </view>
+              <view class='choice-item-smail flex-grow-0 flex-row'>
+                  {{item.posts_content}}
+              </view> 
+            </view> 
+            <view class='choice-item-right flex-grow-0' wx:if="{{item.imgList[0]}}">
+              <image src='{{item.imgList[0]}}'></image>
+            </view>
+          </view>
+          <view class='choice-play flex-grow-0 flex-row flex-x-right'>
+            <view class='choice-news flex-grow-0 flex-x-center flex-y-center'>
+              <image src='/images/icon-news.png'></image>
+              100
+            </view>
+            <view class='choice-fabulous flex-grow-0 flex-x-center flex-y-center'>
+              <image src='/images/good.png'></image>
+              {{item.posts_like}}
+            </view>
+          </view> 
+        </view>
+        <view class='choice-item flex-row' wx:if="{{item.admin_id == 1}}" bindtap="goToDetails" data-id="{{item.id}}">
+          <view class='flex-grow-0 post-img' wx:if="{{item.imgList[0]}}">
+            <image src='{{item.imgList[0]}}'></image>
+          </view>
+          <view class='flex-grow-1'>
+            <view class='post-title'>
+              {{item.posts_title}}
+            </view>
+            <view class='choice-play flex-grow-0 flex-row flex-x-right'>
+              <view class='choice-news flex-grow-0 flex-x-center flex-y-center'>
+                <image src='/images/icon-news.png'></image>
+                {{item.comment_nums}}
+              </view>
+              <view class='choice-fabulous flex-grow-0 flex-x-center flex-y-center'>
+                <image src='/images/good.png'></image>
+                {{item.posts_like}}
+              </view>
+            </view> 
+          </view>
+        </view>
+      </block>
+    </view>
+    <block wx:if="{{Ads.Ads.length > 0}}">
+      <Ads 
+        Ads="{{Ads.Ads}}" 
+        adStyle="{{Ads.adStyle}}"
+        isShow="{{Ads.isShow}}"
+        height="{{Ads.height}}"
+      ></Ads>
+    </block>
+        <view class='choice-title flex-row'>
+      <view class='flex-grow-1 choice-title-center flex-y-center flex-x-center'>
+        <view class='flex-y-center'> —</view>
+        <view class='flex-y-center'><image src='/images/newest-icon.png'></image></view>
+        <view class='flex-y-center' style='margin-right:34rpx;'>最新</view>   
+        <view class='flex-y-center'> —</view>
+      </view>
+      <view class='flex-grow-0 flex-row choice-title-right' data-type='2' bindtap='goToList'>
+        <view class='flex-grow-1 flex-y-center'>
+          更多
+        </view>
+        <view class='flex-grow-1 flex-y-center'>
+          <image src='/images/right-icon.png'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class='choice-list'>
+      <block wx:for="{{newest}}">
+        <view class='choice-item flex-col' wx:if="{{item.admin_id != 1}}" bindtap="goToDetails" data-id="{{item.id}}">
+          <view class='flex-grow-1 flex-row'>
+            <view class='flex-grow-1 choice-item-left flex-col'>
+              <view class='choice-item-title flex-grow-1 flex-row'>
+                  {{item.posts_title}}
+              </view>
+              <view class='choice-item-smail flex-grow-0 flex-row'>
+                  {{item.posts_content}}
+              </view> 
+            </view> 
+            <view class='choice-item-right flex-grow-0' wx:if="{{item.imgList[0]}}">
+              <image src='{{item.imgList[0]}}'></image>
+            </view>
+          </view>
+          <view class='choice-play flex-grow-0 flex-row flex-x-right'>
+            <view class='choice-news flex-grow-0 flex-x-center flex-y-center'>
+              <image src='/images/icon-news.png'></image>
+              {{item.comment_nums}}
+            </view>
+            <view class='choice-fabulous flex-grow-0 flex-x-center flex-y-center'>
+              <image src='/images/good.png'></image>
+              {{item.posts_like}}
+            </view>
+          </view> 
+        </view>
+        <view class='choice-item flex-row' wx:if="{{item.admin_id == 1}}" bindtap="goToDetails" data-id="{{item.id}}">
+          <view class='flex-grow-0 post-img' wx:if="{{item.imgList[0]}}">
+            <image src='{{item.imgList[0]}}'></image>
+          </view>
+          <view class='flex-grow-1'>
+            <view class='post-title'>
+              {{item.posts_title}}
+            </view>
+            <view class='choice-play flex-grow-0 flex-row flex-x-right'>
+              <view class='choice-news flex-grow-0 flex-x-center flex-y-center'>
+                <image src='/images/icon-news.png'></image>
+                {{item.comment_nums}}
+              </view>
+              <view class='choice-fabulous flex-grow-0 flex-x-center flex-y-center'>
+                <image src='/images/good.png'></image>
+                {{item.posts_like}}
+              </view>
+            </view> 
+          </view>
+        </view>
+      </block>
+      <!-- <view class='choice-item flex-col'>
+        <view class='choice-user flex-grow-0 flex-row'>
+          <view class='choice-user-left flex-grow-1 flex-row'>
+            <view class='choice-user-pic flex-grow-0 flex-y-center'>
+              <image src='http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'></image>
+            </view>
+            <view class='choice-user-name flex-grow-0 flex-y-center'>
+              刷马桶少年
+            </view>
+            <view class='choice-user-level flex-grow-0 flex-y-center'>
+              Lv100
+            </view>
+          </view>
+          <view class='flex-grow-0 choice-user-right flex-y-center'>
+            21分钟前
+          </view>
+        </view>
+        <view class='flex-grow-1 flex-row'>
+          <view class='flex-grow-1 choice-item-left flex-col'>
+            <view class='choice-item-title flex-grow-1 flex-row'>
+                The Digitally-Fabricated Version of a Map With Red Pins In It
+            </view>
+            <view class='choice-item-smail flex-grow-0 flex-row'>
+                发生的发多少发多少发多少
+            </view> 
+          </view> 
+          <view class='choice-item-right flex-grow-0'>
+            <image src='http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'></image>
+          </view>
+        </view>
+        <view class='choice-play flex-grow-0 flex-row flex-x-right'>
+          <view class='choice-news flex-grow-0 flex-x-center flex-y-center'>
+            <image src='/images/icon-news.png'></image>
+            100
+          </view>
+          <view class='choice-fabulous flex-grow-0 flex-x-center flex-y-center'>
+            <image src='/images/good.png'></image>
+            1000
+          </view>
+        </view> 
+      </view>
+      <view class='choice-item flex-col'>
+        <view class='choice-user flex-grow-0 flex-row'>
+          <view class='choice-user-left flex-grow-1 flex-row'>
+            <view class='choice-user-pic flex-grow-0 flex-y-center'>
+              <image src='http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'></image>
+            </view>
+            <view class='choice-user-name flex-grow-0 flex-y-center'>
+              刷马桶少年
+            </view>
+            <view class='choice-user-level flex-grow-0 flex-y-center'>
+              Lv100
+            </view>
+          </view>
+          <view class='flex-grow-0 choice-user-right flex-y-center'>
+            21分钟前
+          </view>
+        </view>
+        <view class='flex-grow-1 flex-row'>
+          <view class='flex-grow-1 choice-item-left flex-col'>
+            <view class='choice-item-title flex-grow-1 flex-row'>
+                The Digitally-Fabricated Version of a Map With Red Pins In It
+                The Digitally-Fabricated Version of a Map With Red Pins In It
+                The Digitally-Fabricated Version of a Map With Red Pins In It
+            </view>
+            <view class='choice-item-smail flex-grow-0 flex-row'>
+                发生的发多少发多少发多少发生的发多少发多少发多少发生的发多少发多少发多少发生的发多少发多少发多少
+            </view> 
+          </view> 
+        </view>
+        <view class='choice-play flex-grow-0 flex-row'>
+          <view class='choice-news flex-grow-1 flex-x-center flex-y-center'>
+            <image src='/images/icon-news.png'></image>
+            100
+          </view>
+          <view class='choice-fabulous flex-grow-1 flex-x-center flex-y-center'>
+            <image src='/images/good.png'></image>
+            1000
+          </view>
+        </view> 
+      </view> -->
+    </view> 
+
+  </block>
+  <!-- 精选结束 -->
+  <!--  专题start  -->
+  <block wx:if="{{index==2}}">
+    <view class='newest-list'>
+      <view class='newest-item' wx:for="{{special}}">
+        <navigator open-type='navigate' url='/pages/special/special?id={{item.id}}'>
+          <view class='newest-item-img'>
+            <image src='{{item.img_show}}'></image>
+          </view>
+          <view class=' newest-item-title'>
+            {{item.posts_title}} 
+          </view>
+        </navigator>
+        <view class='newest-item-play flex-row flex-y-center'>
+          <view class='flex-grow-0 like-img'>
+            <image src='/images/like-active.png'></image>
+          </view>
+          <view class='flex-grow-0 comment-img'>
+            <image src='/images/zt-comment-active.png'></image>
+          </view>
+          <view class='flex-grow-1 like-text'>
+            +{{item.posts_like}} <text>like this</text> 
+          </view>
+          <view class='flex-grow-1 comment-text'>
+            +{{item.posts_sc}} <text>comment this</text> 
+          </view>
+        </view>
+      </view>
+      <!-- <view class='newest-item'>
+        <view class='newest-item-img'>
+          <image src='http://tpl.amazeui.org/template/6/app/assets/img/2.png'></image>
+        </view>
+        <view class=' newest-item-title'>
+          his app gives you all the unique moments of exploring 
+        </view>
+        <view class='newest-item-play flex-row flex-y-center'>
+          <view class='flex-grow-0 like-img'>
+            <image src='/images/like-active.png'></image>
+          </view>
+          <view class='flex-grow-0 comment-img'>
+            <image src='/images/zt-comment-active.png'></image>
+          </view>
+          <view class='flex-grow-1 like-text'>
+            +2K <text>like this</text> 
+          </view>
+          <view class='flex-grow-1 comment-text'>
+            +2K <text>comment this</text> 
+          </view>
+        </view>
+      </view>
+      <view class='newest-item'>
+        <view class='newest-item-img'>
+          <image src='http://tpl.amazeui.org/template/6/app/assets/img/2.png'></image>
+        </view>
+        <view class=' newest-item-title'>
+          his app gives you all the unique moments of exploring 
+        </view>
+        <view class='newest-item-play flex-row flex-y-center'>
+          <view class='flex-grow-0 like-img'>
+            <image src='/images/like-active.png'></image>
+          </view>
+          <view class='flex-grow-0 comment-img'>
+            <image src='/images/zt-comment-active.png'></image>
+          </view>
+          <view class='flex-grow-1 like-text'>
+            +2K <text>like this</text> 
+          </view>
+          <view class='flex-grow-1 comment-text'>
+            +2K <text>comment this</text> 
+          </view>
+        </view>
+      </view> -->
+    </view>
+    <view class='flex-row show-loading flex-x-center flex-y-center' wx:if="{{showLoading}}">
+      <image src='/images/three-loading.svg'></image>
+    </view>
+    <view class='flex-row show-no-content flex-y-center flex-x-center' wx:if="{{showNoContent}}">
+      触到底线了哦 ~
+    </view>
+  </block>
+  <!--  专题end  -->
+
+</view>
+<block wx:if="{{float_window==1}}">
+    <include src="/common/post.wxml"/>
+</block>
