@@ -1,0 +1,57 @@
+/* pages/appreciate/appreciate.wxss */
+page{
+  background-color: #fff;
+}
+.user{
+  padding: 50rpx;
+}
+.user-pic{
+  margin: 24rpx 0;
+}
+.user-pic image{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 70rpx;
+}
+.user-name{
+  font-size: 12pt;
+  color: #222;
+}
+.money{
+  padding:24rpx 6rpx;
+  text-align: center;
+}
+.money-item{
+  width: 180rpx;
+  display: inline-block;
+  border: 5rpx solid #d65746;
+  margin: 18rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: #d65746;
+  font-size: 16pt;
+  font-family: italic;
+}
+.money-item text{
+  font-size: 11pt;
+}
+.other-money{
+  color: #00c4cd;
+}
+.section{
+  text-align: center;
+  margin: 24rpx 0;
+}
+.section input{
+  border:1rpx solid #e2e2e2;
+  height: 100rpx;
+  width: 350rpx;
+  font-size: 13pt;
+}
+.confirm{
+  font-size: 14pt;
+  color: #d65746;
+  margin-left: 24rpx;
+  padding: 24rpx;
+}

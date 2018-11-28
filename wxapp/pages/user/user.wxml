@@ -1,0 +1,122 @@
+<!--pages/user/user.wxml-->
+<view class='body'>
+  <view class='user-top flex-row'>
+    <image src='{{stores.bg_img}}'></image>
+    <view class='user-info flex-col'>
+      <view class='user-pic flex-grow-0 flex-row flex-x-center'>
+        <image src='{{userinfo.avatar}}'></image>
+      </view>
+      <view class='user-name flex-grow-0 flex-row flex-x-center' style='color:#00c4cd;'>
+        {{userinfo.nickname}}
+      </view>
+        <!-- <Sign id="sign" bindtap="signEvent"></Sign> -->
+    </view>
+  </view>
+  <view class='my flex-row'>
+    <view class='my-item flex-grow-1 flex-col flex-x-center flex-y-center' bindtap='goToCollection'>
+      <view class='my-item-img'>
+        <image src='/images/collection-icon.png'></image>
+      </view>
+      <view class='my-item-name'>收藏</view>
+    </view>
+    <navigator open-type='navigate' url='/pages/my-comment/my-comment' class='my-item flex-grow-1 flex-col flex-x-center flex-y-center'>
+      <view class='my-item-img'>
+        <image src='/images/comment-icon.png'></image>
+      </view>
+      <view class='my-item-name'>评论</view>
+    </navigator>
+    <view class='my-item flex-grow-1 flex-col flex-x-center flex-y-center' bindtap='goToPost'>
+      <view class='my-item-img'>
+        <image src='/images/post-icon.png'></image>
+      </view>
+      <view class='my-item-name'>发帖</view>
+    </view>
+  </view> 
+  <view class='about-row'>
+    <navigator open-type='navigate' url='/pages/my-message/my-message' class='flex-row about-row-item flex-y-center'>
+      <view class='flex-grow-0 about-icon flex-y-center'>
+        <image src='/images/message-icon.png'></image>
+      </view>
+      <view class='flex-grow-1 about-item-title flex-y-center'>
+        我的消息
+      </view>
+      <view class='flex-grow-0 about-bubble flex-y-center'>
+        {{message_num}}
+      </view>
+      <view class='flex-grow-0 about-right flex-y-center'>
+        <image src='/images/right-icon.png'></image>
+      </view>
+    </navigator>
+    <navigator open-type='navigate' url='/pages/my-post/my-post' class='flex-row about-row-item flex-y-center'>
+      <view class='flex-grow-0 about-icon flex-y-center'>
+        <image src='/images/my-posts-icon.png'></image>
+      </view>
+      <view class='flex-grow-1 about-item-title flex-y-center'>
+        我的发帖
+      </view>
+      <view class='flex-grow-0 about-bubble flex-y-center'>
+        {{posts_num}}
+      </view>
+      <view class='flex-grow-0 about-right flex-y-center'>
+        <image src='/images/right-icon.png'></image>
+      </view>
+    </navigator>
+    <navigator open-type='navigate' url='/pages/wallet/wallet' class='flex-row about-row-item flex-y-center' style='border:0'>
+      <view class='flex-grow-0 about-icon flex-y-center'>
+        <image src='/images/wallet-icon.png'></image>
+      </view>
+      <view class='flex-grow-1 about-item-title flex-y-center'>
+        我的钱包
+      </view>
+      <view class='flex-grow-0 about-bubble flex-y-center'>
+        {{money}}
+      </view>
+      <view class='flex-grow-0 about-right flex-y-center'>
+        <image src='/images/right-icon.png'></image>
+      </view>
+    </navigator>
+  </view>
+  <view class='about-row'>
+    <view class='flex-row about-row-item flex-y-center' bindtap="goToExplain">
+      <view class='flex-grow-0 about-icon flex-y-center'>
+        <image src='/images/about-icon.png'></image>
+      </view>
+      <view class='flex-grow-1 about-item-title flex-y-center'>
+        关于我们
+      </view>
+      <view class='flex-grow-0 about-right flex-y-center'>
+        <image src='/images/right-icon.png'></image>
+      </view>
+    </view>
+    <view class='flex-row about-row-item flex-y-center' bindtap="callTel">
+      <view class='flex-grow-0 about-icon flex-y-center'>
+        <image src='/images/call-icon.png'></image>
+      </view>
+      <view class='flex-grow-1 about-item-title flex-y-center'>
+        联系我们
+      </view>
+      <view class='flex-grow-0 about-right flex-y-center'>
+        <image src='/images/right-icon.png'></image>
+      </view>
+    </view>
+    <button open-type="contact" class='flex-row about-row-item flex-y-center' style='border:0'>
+      <view class='flex-grow-0 about-icon flex-y-center'>
+        <image src='/images/server-icon.png'></image>
+      </view>
+      <view class='flex-grow-1 about-item-title flex-y-center'>
+        在线客服
+      </view>
+      <view class='flex-grow-0 about-right flex-y-center'>
+        <image src='/images/right-icon.png'></image>
+      </view>
+    </button>
+  </view>
+  <view class='copyright flex-col flex-y-center'>
+    <view class='copyright-logo'>
+      <image src='{{stores.logo_img}}'></image>
+    </view>
+    <view class='copyright-name'>
+      {{stores.company_name}}
+    </view>
+  </view>
+</view>

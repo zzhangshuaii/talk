@@ -1,0 +1,56 @@
+<!--pages/post/post.wxml-->
+<view class='body'>
+  <view class='post-title flex-row flex-y-center'>
+    <input type='text' placeholder-class='place-title' placeholder='输入标题' bindinput="placeTitle"></input>
+  </view>
+  <view class='post-content'>
+    <textarea placeholder-class='place-title' placeholder='请输入内容' bindinput="placeContent"></textarea>
+  </view>
+  <view class='post-image' wx:if="{{imageList.length > 0}}">
+    <view class='post-image-item flex-y-bottom flex-x-center' wx:for="{{imageList}}" wx:for-index="idx">
+      <view class='close-image flex-y-center flex-x-center' data-key='{{idx}}' bindtap='clonsImage'>
+        <image src='/images/clonse-icon.png'></image>
+      </view>
+      <view class='post-image-item-pic flex-y-center flex-x-center' data-key='{{idx}}' bindtap='showBigImages'>
+        <image src='{{item}}'></image>
+      </view>
+    </view>
+  </view>
+  <view class='post-footer flex-row'>
+    <view class='flex-grow-1 image-btn flex-y-center'>
+      <image src='/images/image-btn-icon.png' bindtap='imageBtn'></image>
+    </view>
+    <view class='flex-grow-0 flex-y-center'>
+      <view class='post-btn' bindtap='postInfo'>
+        发表
+      </view>
+    </view>
+  </view>
+  <view class='class_label'>
+    <view class="class flex-row flex-y-center">
+      <view class='class_title flex-grow-0'>请选择分类</view>
+      <view class='flex-grow-1 flex-row'>
+        <picker class='flex-grow-1 flex-x-right' bindchange="bindPickerChange" range-key="class_name" range="{{fristClass}}">
+          <view class="picker flex-x-right">
+            {{class_name}}
+          </view>
+        </picker>
+        <view class='flex-grow-0 class_right flex-y-center'>
+          <image src='/images/right-icon.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='label'>
+      <view class='label-tip'>
+        提示：可以选择多个标签
+      </view>
+      <block wx:for="{{towClass}}">
+        <view class='label-item {{item.selected?"active":""}}' data-index='{{index}}' bindtap='selectedLabel'>
+          {{item.label_name}}
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+

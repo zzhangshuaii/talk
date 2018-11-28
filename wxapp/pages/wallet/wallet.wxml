@@ -1,0 +1,57 @@
+<!--pages/wallet/wallet.wxml-->
+<view class='body'>
+  <view class='wallet-top flex-row'>
+    <view class='flex-grow-1 flex-col flex-y-center flex-x-right'>
+      <view class='wallet-top-icon'>
+        <image src='/images/total-money-icon.png'></image>
+      </view>
+      <view class='wallet-top-text'>
+        总金额
+      </view>
+      <view class='wallet-top-value'>
+        ¥{{total_money}}
+      </view>
+    </view>
+    <view class='flex-grow-1 flex-col flex-y-center flex-x-right'>
+      <view class='wallet-top-icon'>
+        <image src='/images/money-icon.png'></image>
+      </view>
+      <view class='wallet-top-text'>
+        余额
+      </view>
+      <view class='wallet-top-value'>
+        ¥{{money}}
+      </view>
+    </view>
+    <view class='flex-grow-1 flex-col flex-y-center flex-x-right'>
+      <view class='wallet-top-icon'>
+        <image src='/images/withdrawals-icon .png'></image>
+      </view>
+      <view class='wallet-top-text'>
+        提现
+      </view>
+      <view class='wallet-top-value'>
+        <block wx:if="{{tixian > 0}}">¥100.00</block> 
+      </view>
+    </view>
+  </view>
+  <view class='title flex-row'>
+    <view class="go flex-grow-1 flex-x-center flex-y-center {{index == 1 ? 'active' : ''}}" data-id='1'  bindtap="topbartoggle" style="">收入</view>
+    <view class="go flex-grow-1 flex-x-center flex-y-center {{index == 2 ? 'active' : ''}}" data-id='2' bindtap="topbartoggle" style="">支出</view>
+  </view>
+  <view class='admire-list'>
+    <view class='admire-item flex-row flex-y-center flex-x-center' wx:for="{{list}}" wx:for-index="idx">
+      <view class='flex-grow-1 flex-row'>
+        <!-- <view class='admire-user-pic flex-grow-0 flex-y-center'>
+          <image src='{{item.avatar}}'></image>
+        </view> -->
+        <view class='admire-user-name flex-grow-0 flex-y-center'>
+          {{index==1?" 贴友打赏你的贴":"你打赏贴友的贴"}}《{{item.post_title}}》
+        </view>
+      </view>
+      <view class='admire-money flex-gorw-0 flex-y-center'>
+        {{index == 1 ? '+' : '-'}}{{item.money}}元
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,29 @@
+/* page{
+  background-color: #fff;
+} */
+.body{
+  background-color: #fff;
+ 
+}
+.main{
+  padding:0 30rpx;
+}
+.box-left-top text{
+  font-size: 30rpx;
+}
+.flex-y-bottom text{
+  font-size: 25rpx;
+  color: #ccc;
+}
+.flex-row{
+  padding-top: 20rpx;
+  padding-bottom: 50rpx;
+  border-bottom: 1rpx solid #e2e2e2;
+}
+.right-icon image{
+  width: 48rpx;
+  height: 48rpx;
+}
+.show-loading image{
+  height: 40rpx;
+}

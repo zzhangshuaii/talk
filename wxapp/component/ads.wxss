@@ -1,0 +1,8 @@
+/* component/ads.wxss */
+.ads-yangshi{
+  overflow: hidden;
+  margin:5px 0;
+}
+.ads-yangshi image{
+  width: 100%;
+}

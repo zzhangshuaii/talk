@@ -1,0 +1,26 @@
+/* pages/appreciate-list/appreciate-list.wxss */
+.body{
+  font-size: 10pt;
+  color:#222;
+}
+.admire-top{
+  background-color: #fff;
+  height: 70rpx;
+  padding: 0 24rpx;
+}
+.admire-list{
+  background-color: #fff;
+}
+.admire-item {
+  height: 80rpx;
+  border-top: 1rpx solid #edebeb;
+  padding: 0 24rpx;
+}
+.admire-user-pic{
+  margin-right:24rpx; 
+}
+.admire-user-pic image{
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 30rpx;
+}

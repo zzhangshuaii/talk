@@ -1,0 +1,50 @@
+/* pages/my-comment/my-comment.wxss */
+.comment-item{
+  background-color: #fff;
+  padding: 24rpx;
+  border-bottom: 1rpx solid #e2e2e2;
+}
+.comment-top{
+  font-size: 10pt;
+  color: #8e8e8e;
+}
+.comment-text{
+  font-size: 11pt;
+  color: #222222;
+  margin-top: 15rpx;
+}
+.comment-cover-user{
+  color: #00C4CD;
+   display: inline-block; 
+  font-size: 11pt;
+  padding-left: 24rpx;
+}
+.comment-cover{
+  color: #222222;
+  font-size: 11pt;
+  margin-top: 15rpx;
+}
+.comment-form-left{
+  color: #222222;
+  font-size: 11pt;
+  display: inline-block;
+}
+.comment-form{
+  color: #00f;
+  font-size: 11pt;
+  display: inline-block;
+  margin-top: 15rpx;
+}
+ /* 底部加载动画 */
+.show-loading image{
+  height: 40rpx;
+  width: 100%;
+  padding: 30rpx 0;
+  background-color: #ffffff;
+}
+.show-no-content{
+  font-size: 10pt;
+  color: #8e8e8e;
+  padding: 30rpx 0;
+  background-color: #fff;
+}

@@ -1,0 +1,81 @@
+/* pages/user/user.wxss */
+.user-top{
+  height: 400rpx;
+  position: relative;
+}
+.user-top image{
+  width: 100%;
+  height: 100%;
+}
+.user-info{
+  position: absolute;
+  top: 200rpx;
+  left: 0rpx;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12pt;
+}
+.user-pic image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  border: 2rpx solid #ffffff;
+}
+.my-item-img image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.my{
+  background-color: #ffffff;
+  border-top: 1rpx solid #e2e2e2;
+}
+.my-item{
+  padding: 24rpx 40rpx;
+  font-size: 11pt;
+  color: #222222;
+}
+.about-row{
+  margin-top: 24rpx;
+  background-color: #ffffff;
+  padding: 0 24rpx;
+}
+.about-row-item{
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #e2e2e2;
+}
+.about-icon image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.about-item-title{
+  font-size: 12pt;
+  color: #222222;
+  padding-left: 10rpx;
+}
+.about-right image{
+  width: 48rpx;
+  height: 48rpx;
+}
+button{
+  background-color: #ffffff;
+}
+button::after {
+  content: normal;
+}
+.copyright{
+  margin-top: 30rpx;
+}
+.copyright-logo image{
+  width: 160rpx;
+  height: 70rpx;
+}
+.copyright-name{
+  font-size: 10pt;
+  color:#aaa;
+}
+
+.about-bubble{
+  font-size: 11pt;
+  color: #00C4CD;
+}

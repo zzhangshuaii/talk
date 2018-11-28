@@ -1,0 +1,53 @@
+<!--pages/special/special.wxml-->
+<view class='body'>
+    <view class='special-top'>
+      <view class='special-top-bg-img'>
+        <image src='{{data.bg_img}}'></image>
+      </view>
+      <view class='float-box'>
+        <view class='float-box-mask'></view>
+        <view class='special-top-title'>
+          {{data.posts_title}}
+        </view>
+        <view class='special-top-play flex-row'>
+          <view class='flex-grow-0 like-text'>
+            +{{data.posts_like}} <text>like this</text> 
+          </view>
+          <!-- <view class='flex-grow-0 comment-text'>
+            +{{data.comment_nums}} <text>comment this</text> 
+          </view> -->
+        </view>
+      </view>
+    </view>
+    <view class='special-play flex-row felx-y-center'>
+      <!-- <view class='flex-grow-0'>
+        <image src='/images/like-active.png'></image>
+      </view> -->
+      <view class='flex-grow-0 felx-y-center' wx:if="{{data.like}}">
+        <image src='/images/like-active.png'></image>
+    </view>
+    <view class='flex-grow-0 felx-y-center' wx:else bindtap='saveLike'>
+        <image src='/images/like.png'></image>
+    </view>
+      <!-- <view class='flex-grow-0'>
+        <image src='/images/zt-comment.png'></image>
+      </view> -->
+      <button open-type='share' class='flex-grow-1 flex-row flex-x-right flex-y-center special-share'>
+        <view class='flex-grow-0 flex-y-center'>
+          <image src='/images/zt-share-icon.png'></image>
+        </view>
+        <view class='flex-grow-0 flex-y-center'>
+          Share
+        </view>
+      </button>
+    </view>
+    <view class='details'>
+      <import src="../../wxParse/wxParse.wxml"/>
+      <template is="wxParse" data="{{wxParseData:detail.nodes}}"/>
+    </view>
+    <!-- <view class='label-list flex-row'>
+       <view class='label-item' wx:for="{{data.labels}}" data-id="{{item.id}}" data-type="3" bindtap='goToList'>
+        {{item.label_name}}
+      </view> 
+    </view> -->
+</view>

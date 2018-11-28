@@ -1,0 +1,54 @@
+/* pages/wallet/wallet.wxss */
+.wallet-top{
+  background-color: #696f77;
+  height: 280rpx;
+  padding-bottom: 30rpx;
+}
+.wallet-top-icon image{
+  height: 80rpx;
+  width: 80rpx;
+}
+.wallet-top-text{
+  color:#fefefe;
+  font-size: 11pt;
+}
+.wallet-top-value{
+  color: #b5b7bc;
+  font-size: 10pt;
+  height: 30rpx;
+}
+.title{
+  color: #71757B;
+  font-size: 12pt;
+  border-bottom: 2rpx solid #D2CFD0;
+  background-color: #ffffff;
+}
+.title .go{
+  padding: 20rpx 0;
+}
+.title .active{
+  border-bottom: 4rpx solid #00C4CD;
+  color: #222222;
+}
+
+.admire-list{
+  background-color: #fff;
+  font-size: 9pt;
+}
+.admire-item {
+  min-height: 80rpx; 
+  border-top: 1rpx solid #edebeb;
+  padding: 5rpx 24rpx;
+}
+.admire-user-pic{
+  margin-right:24rpx; 
+}
+.admire-user-pic image{
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 30rpx;
+}
+.admire-user-name{
+  max-width: 90%;
+
+}

@@ -1,0 +1,52 @@
+<!--pages/appreciate/appreciate.wxml-->
+<view class='body'>
+  <view class='user'>
+    <view class='flex-row flex-x-center user-pic'>
+      <image src='/images/thinks.gif' wx:if="{{data.user_id==1}}"></image>
+       <image src='{{data.user_info.avatar}}' wx:else></image>
+    </view>
+    <view class='flex-row flex-x-center user-name'>
+      <block wx:if="{{data.user_id==1}}">
+        多一份赞赏，多一份动力
+      </block>
+      <block wx:else>
+        {{data.user_info.nickname}}
+      </block>
+    </view>
+  </view>
+
+  <view class='money'>
+    <view class='money-item' bindtap='fixedMoney' data-money='1'>
+      
+      1 <text>元</text> 
+    </view>
+        <view class='money-item' bindtap='fixedMoney' data-money='5'>
+      
+      5 <text>元</text> 
+    </view>
+        <view class='money-item' bindtap='fixedMoney' data-money='10'>
+      
+      10 <text>元</text> 
+    </view>
+            <view class='money-item' bindtap='fixedMoney' data-money='20'>
+      
+      20 <text>元</text> 
+    </view>
+            <view class='money-item' bindtap='fixedMoney' data-money='50'>
+      
+      50 <text>元</text> 
+    </view>
+    <view class='money-item' bindtap='fixedMoney' data-money='100'>
+      100 <text>元</text> 
+    </view>
+
+  </view>
+  <view class="section flex-row flex-x-center flex-y-center" wx:if="{{showOther}}">
+    <input type="digit" bindinput="setMoney" value='{{money}}' focus />
+    <text class='confirm' bindtap='appreciate'> 确认</text>
+  </view>
+  <view class='other-money flex-row flex-x-center' bindtap='otherMoney'>
+    其他金额
+  </view>
+
+</view>

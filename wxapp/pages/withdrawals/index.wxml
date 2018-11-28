@@ -1,0 +1,59 @@
+<!--pages/withdrawals/index.wxml-->
+<view class='body'>
+<form report-submit="true" bindsubmit="withdrawals">
+  <view class='to-item flex-row flex-y-center' bindtap='selectTarget'>
+    <view class='to-item-img flex-grow-0 flex-y-center'>
+      <image src='/images/wechat-wallet-icon.png'></image>
+    </view>
+    <view class='to-item-text flex-grow-1 flex-y-center'>
+      微信余额
+    </view>
+    <view class='to-item-right flex-grow-0 flex-y-center'>
+      <image src='/images/right-icon.png'></image>
+    </view>
+  </view>
+  <view class='tixian'>
+    <view class='tixian-top flex-row flex-y-center'>
+      提现金额（收取{{poundage}}%服务费）
+    </view>
+    <view class='tixian-money flex-row flex-y-center'>
+      <view class='tixian-left flex-grow-0 flex-y-center'>
+        ¥
+      </view>
+      <view class='tieixn-text flex-grow-1 flex-y-center'>
+        <input type='number' value='{{tx_money}}' bindinput="setTxMoney" focus/>
+      </view>
+    </view>
+    <view class='flex-row tixian-bottom flex-y-center'>
+      <view class='surplus-money flex-grow-1' wx:if="{{show_text==0 && service_charge == 0}}">
+        可用余额 {{money}} 元
+      </view>
+      <view class='surplus-money flex-grow-1' wx:if="{{show_text==0 && service_charge != 0}}">
+        服务费 {{service_charge}} 元
+      </view>
+      <view class='surplus-money flex-grow-1' style='color:#ff0000' wx:if="{{show_text==1}}">
+        提现金额不能低于{{min_moenry}}
+      </view>
+      <view class='surplus-money flex-grow-1' style='color:#ff0000' wx:if="{{show_text==2}}">
+        金额已超过可提现金额
+      </view>
+      <view class='surplus-money flex-grow-1' style='color:#ff0000' wx:if="{{show_text==3}}">
+        提现金额不能超过{{max_monery}}
+      </view>
+      <view class='tixian-all flex-grow-0' bindtap='allMoney'>
+        全部提现
+      </view>
+    </view>
+  </view>
+  <view class='explain'>
+    <text class='flex-row'>1、平台将收取{{poundage}}% 服务费。</text>
+    <text class='flex-row'>2、提现限额为{{min_moenry}} ~ {{max_monery}} 元</text>
+    <text class='flex-row'>3、提现1-5个工作日到账</text> 
+  </view>
+  <view class='flex-row withdrawals flex-y-center flex-x-center'>
+    <button formType="submit" class='tixian-btn flex-y-center flex-x-center {{tx_money==0?"btn-disabled":""}}'>
+      确认提现
+    </button>
+  </view>
+</form>
+</view>

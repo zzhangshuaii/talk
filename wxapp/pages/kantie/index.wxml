@@ -1,0 +1,32 @@
+<!--pages/kantie/index.wxml-->
+<view class='body flex-row'>
+  <!-- <scroll-view scroll-x="true" class="scroll-view-x" scroll-with-animation="true" scroll-left="{{scrollLeft}}">
+    <block wx:for="{{title}}" wx:key="unique">
+      <view data-id="{{item.id}}" class="scroll-view-item {{v==item.id ? 'active' : ''}}"  bindtap="switchNav">
+          {{item.titl}}
+      </view>
+    </block>
+  </scroll-view> -->
+  
+  <scroll-view scroll-y='true' class='scroll-view-y parent flex-grow-0' style="height: {{clientHeight?clientHeight+'px':'auto'}}" scroll-with-animation='true'>
+    <block wx:for="{{fristClass}}">
+      <view class='scroll-view-item flex-y-center {{activeFristIndex==index?"active":""}}' bindtap="fristTab" data-index='{{index}}'>
+        {{item.class_name}}
+      </view>
+    </block>
+  </scroll-view>
+
+  <scroll-view scroll-y='true' class='scroll-view-y flex-grow-1 children' style="height: {{clientHeight?clientHeight+'px':'auto'}}" scroll-with-animation='true'>
+    <view class='children-title flex-y-center'>{{fristClass[activeFristIndex].class_name}}</view>
+    <view class='children-list'>
+      <view class='children-item' wx:for="{{towClass}}" data-type="3" data-id='{{item.id}}' bindtap='goToList'>
+        <view class='children-item-pic flex-x-center'>
+          <image src='{{item.img_show}}'></image>
+        </view>
+        <view class='children-item-name flex-x-center'>
+          {{item.label_name}}
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

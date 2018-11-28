@@ -1,0 +1,78 @@
+/* pages/withdrawals/index.wxss */
+.to-item{
+  margin: 30rpx 0;
+  background-color: #ffffff;
+  padding: 0 24rpx;
+  height: 100rpx;
+}
+.to-item-img image{
+  width: 58rpx;
+  height: 58rpx;
+}
+.to-item-text{
+  font-size: 11pt;
+  color: #000;
+  margin-left: 24rpx;
+}
+.to-item-right image{
+  width: 48rpx;
+  height: 48rpx;
+}
+.tixian{
+  background-color: #ffffff;
+  padding: 0 24rpx;
+}
+.tixian-top{
+  font-size: 12pt;
+  color: #333333;
+  height: 80rpx;
+}
+.tixian-money{
+  height: 100rpx;
+}
+.tixian-left{
+  font-size: 24pt;
+  font-weight: bold;
+  margin-right: 30rpx;
+}
+.tieixn-text{
+  height: 100%;
+}
+.tieixn-text input{
+  height: 100%;
+  width: 100%;
+}
+.tixian-bottom{
+  border-top: 1rpx solid #e2e2e2;
+  height: 70rpx;
+  font-size: 11pt;
+}
+.surplus-money{
+  color: #8e8e8e;
+}
+.tixian-all{
+  color: #038bd7;
+}
+.withdrawals{
+  margin-top: 100rpx;
+}
+.tixian-btn{
+  width: 600rpx;
+  height: 80rpx;
+  background-color: #038bd7;
+  border-radius: 10rpx;
+  color: #ffffff;
+  font-size: 12pt;
+}
+.btn-disabled{
+  background-color: #98ccf1;
+  color: #c4e9ff;
+}
+.explain{
+  font-size: 9pt;
+  padding: 24rpx;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+

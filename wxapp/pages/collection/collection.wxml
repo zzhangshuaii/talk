@@ -1,0 +1,24 @@
+<view class='body'>
+<view class='main'>
+  <view class='flex-row' bindtap='goToPosts' bindlongpress='removerEvent' wx:for="{{collection}}" data-id='{{item.posts_id}}' data-index='{{index}}'>
+    <view class='flex-grow-1 flex-x-left'>
+      <view class='box-left-top'>
+        <text>{{item.posts_title}}</text>
+      </view>
+      <view class='flex-y-bottom' wx:if="{{item.admin_id != 1}}">
+        <text>{{item.posts_content}}</text>
+      </view>
+    </view>
+    <view class='flex-x-right flex-grow-0 flex-y-center right-icon'>
+      <!-- <text style='color:#ccc;'>></text> -->
+      <image src='/images/right-icon.png'></image>
+    </view>
+  </view>
+  <!-- <view class='no-list'>
+    没有更多喽...
+  </view> -->
+  <view class='flex-row show-loading flex-x-center flex-y-center' wx:if="{{showLoading}}">
+    <image src='/images/three-loading.svg'></image>
+  </view>
+</view>
+</view>

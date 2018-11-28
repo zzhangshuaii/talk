@@ -1,0 +1,21 @@
+<!--pages/appreciate-list/appreciate-list.wxml-->
+<view class='body'>
+  <view class='admire-top flex-row flex-y-center'>
+    {{admireNum}} 人奖励
+  </view>
+  <view class='admire-list'>
+    <view class='admire-item flex-row flex-y-center flex-x-center' wx:for="{{list}}">
+      <view class='flex-grow-1 flex-row'>
+        <view class='admire-user-pic flex-grow-0 flex-y-center'>
+          <image src='{{item.avatar}}'></image>
+        </view>
+        <view class='admire-user-name flex-grow-0 flex-y-center'>
+          {{item.nickname}}
+        </view>
+      </view>
+      <view class='admire-money flex-gorw-0 flex-y-center'>
+        {{item.money}}元
+      </view>
+    </view>
+  </view>
+</view>

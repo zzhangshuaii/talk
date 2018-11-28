@@ -1,0 +1,3 @@
+<view class='common-home flex-y-center flex-x-center' bindtap='goToHome'>
+  <image src='/images/home.png'></image>
+</view>

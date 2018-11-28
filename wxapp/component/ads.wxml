@@ -1,0 +1,24 @@
+<!--component/ads.wxml-->
+<view class='{{adStyle}} advert' hidden='{{isShow}}' style="height: {{height}};">
+  <swiper indicator-dots="true"
+      autoplay="true" interval="5000" duration="1000" circular="true">
+      <block wx:for="{{Ads}}" wx:key="item">
+        <navigator wx:if="{{item.type=='0'}}" url='/pages/web/web?url={{item.ads_url}}' open-type='navigateTo'>
+          <swiper-item>
+            <image src="{{item.ads_img}}" class="slide-image" style="height: {{height}};" />
+          </swiper-item>
+        </navigator>
+        <view wx:if="{{item.type=='1'}}" bindtap='adsTap' data-adsIndex='{{index}}'>
+          <swiper-item>
+            <image src="{{item.ads_img}}" class="slide-image" style="height: {{height}};" />
+          </swiper-item>
+        </view>
+      </block>
+  </swiper>
+</view>
+    <!-- <Ads 
+      Ads="{{Ads.Ads}}" 
+      adStyle="{{Ads.adStyle}}"
+      isShow="{{Ads.isShow}}"
+      height="{{Ads.height}}"
+    ></Ads> -->

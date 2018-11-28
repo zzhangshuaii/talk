@@ -1,0 +1,63 @@
+<!--pages/list/list.wxml-->
+<view class='body'>
+  <view class='list'>
+    <view class='choice-item flex-col' wx:for="{{special}}">
+      <view class='choice-user flex-grow-0 flex-row' bindtap="goToDetails" data-id="{{item.id}}">
+        <view class='choice-user-left flex-grow-1 flex-row' wx:if="{{item.admin_id != 1}}">
+          <view class='choice-user-pic flex-grow-0 flex-y-center'>
+            <image src='{{item.avatar}}'></image>
+          </view>
+          <view class='choice-user-name flex-grow-0 flex-y-center'>
+            {{item.nickname}}
+          </view>
+          <view class='choice-user-level flex-grow-0 flex-y-center'>
+            Lv1
+          </view>
+        </view>
+        <view class='choice-user-left flex-grow-1 flex-row' wx:if="{{item.admin_id == 1}}">
+          <view class='choice-user-pic flex-grow-0 flex-y-center'>
+            <image src='/images/admin.png'></image>
+          </view>
+          <view class='choice-user-name flex-grow-0 flex-y-center'>
+            Admin
+          </view>
+          <view class='choice-user-level flex-grow-0 flex-y-center'>
+            Lv100
+          </view>
+        </view>
+        <view class='flex-grow-0 choice-user-right flex-y-center'>
+          {{item.word_time}}
+        </view>
+      </view>
+      <view class='flex-grow-1 flex-row' bindtap="goToDetails" data-id="{{item.id}}">
+        <view class='flex-grow-1 choice-item-left flex-col'>
+          <view class='choice-item-title flex-grow-1 flex-row'>
+              {{item.posts_title}}
+          </view>
+          <view class='choice-item-smail flex-grow-0 flex-row' wx:if="{{item.admin_id != 1}}">
+              {{item.posts_content}}
+          </view>
+        </view>
+        <view class='choice-item-right flex-grow-0' wx:if="{{item.thum_img}}">
+          <image src='{{item.thum_img}}'></image>
+        </view>
+      </view>
+      <view class='choice-play flex-grow-0 flex-row flex-x-right'>
+        <view class='choice-news flex-grow-0 flex-x-center flex-y-center'>
+          <image src='/images/icon-news.png'></image>
+          {{item.comment_nums}}
+        </view>
+        <view class='choice-fabulous flex-grow-0 flex-x-center flex-y-center'>
+          <image src='/images/good.png'></image>
+          {{item.posts_like}}
+        </view>
+      </view>
+    </view>
+  </view>
+    <view class='flex-row show-loading flex-x-center flex-y-center' wx:if="{{showLoading}}">
+      <image src='/images/three-loading.svg'></image>
+    </view>
+    <view class='flex-row show-no-content flex-y-center flex-x-center' wx:if="{{showNoContent}}">
+      触到底线了哦 ~
+    </view>
+</view>

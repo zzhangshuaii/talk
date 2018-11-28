@@ -1,0 +1,81 @@
+.container {
+  background: #fff;
+}
+
+.btn-area{
+  /* float: left; */
+width: 100%;
+float: left;
+background: #fff;
+}
+.btn-area navigator{
+  text-align: center;
+  float: left; 
+  line-height: 2.5rem;
+  width: 33.333%;
+  color: #b4b4ae;
+  font-size: 14px;
+  border-bottom: 2px solid #ccc; 
+ 
+}
+.main{
+  width: 95%;
+  margin: 0 auto;
+}
+.main-txt{
+  text-align: center;
+}
+.main_blok{
+  margin-top: 10px;
+  width: 100%;
+   height:140px; 
+  border-bottom: 1px solid #ccc;
+}
+.main_blok .main_blok_top{
+  display: block;
+  width: 100%;
+  clear: both;
+}
+.main_blok_top .top_left{
+  float: left;
+  width: 65%;
+  font-size: 13px;
+}
+ .top_left text{
+   display: block;
+ }
+.main_blok_top .top_right{
+  float: right;
+}
+.top_right image{
+  height:79px;
+  width: 102px;
+}
+.main_blok_butt{
+  width: 100%;
+  display: block;
+}
+.butt_left {
+  float: left;
+  width: 70%;
+}
+.butt_left image{
+  width: 30px;
+  height: 30px;
+   border-radius:50%;
+   margin-top: 14px;
+}
+.butt_left text{
+  color: #01c4c9;
+  font-size: 14px;
+}
+.butt_right{
+  float: right;
+  font-size: 11px;
+  color: #ccc;
+  margin-top: 28px;
+}
+.butt_right image{
+  width: 13px;
+  height: 13px;
+}

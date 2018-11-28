@@ -1,0 +1,73 @@
+<!--index.wxml-->
+<view class="container">
+<!--导航开始  -->
+  <view class="btn-area">
+    <navigator url="/we7/pages/index/index"  open-type='redirectTo'>首页 </navigator>
+      <view wx:if="{{statu == 1}}">
+      <navigator url="/we7/pages/home/index?title=热门 Hot&statu=1" open-type="redirectTo" hover-class="other-navigator-hover"  style='border-bottom: 2px solid #01c4c9;color:#000;'>热门</navigator>
+      </view>
+      <view wx:else> <navigator url="/we7/pages/home/index?title=热门 Hot&statu=1" open-type="redirectTo" hover-class="other-navigator-hover">热门</navigator> </view>
+      <view wx:if="{{statu == 2}}">
+    <navigator url="/we7/pages/home/index?title=最新 New&statu=2" open-type="redirect" hover-class="other-navigator-hover"  style='border-bottom: 2px solid #01c4c9;color:#000;'>最新</navigator>
+    </view>
+    <view wx:else><navigator url="/we7/pages/home/index?title=最新 New&statu=2" open-type="redirect" hover-class="other-navigator-hover">最新</navigator></view>
+  </view>
+  <!--导航结束  -->
+  <!--主页首推  -->
+  <view class='main'>
+    <view class='main-txt'>
+      <text> {{title}} </text>
+    </view>
+    <!--列表框  -->
+    <view class='main_blok'>
+      <!--顶部，文字和图片  -->
+      <view class='main_blok_top'>
+        <view class='top_left'>
+          <text>本服务免费期3天，如需继续开展网站服务，软件免费使用，主机需付费购买，详情请咨询DZ动力</text>
+          <text style='font-size:13px;color:#ccc;'>软件免费使用,本服务免费期3天</text>
+        </view>
+        <view class='top_right'>
+          <image src='http://tpl.amazeui.org/template/5/app/img/b2.jpg'></image>
+        </view>
+      </view>
+      <!--底部,个人信息，赞和查看数量  -->
+      <view class='main_blok_butt'>
+        <view class='butt_left'>
+          <image src='http://tpl.amazeui.org/template/5/app/img/c1.jpg'></image>
+          <text> BigTree </text>
+          <text style='font-size:10px;color:#ccc'>12-10 AT 12:33</text>
+        </view>
+        <view class='butt_right'>
+          <image src='/we7/resource/icon/eye44.png'></image>1600
+          <image src='/we7/resource/icon/like67.png'></image>8000
+        </view>
+      </view>
+    </view>
+
+    <view class='main_blok'>
+      <!--顶部，文字和图片  -->
+      <view class='main_blok_top'>
+        <view class='top_left'>
+          <text>软件免费使用，主机需付费购买，本服务免费期3天，如需继续开展网站服务，详情请咨询DZ动力</text>
+          <text style='font-size:13px;color:#ccc;'>软件免费使用,本服务免费期3天</text>
+        </view>
+        <view class='top_right'>
+          <image src='http://tpl.amazeui.org/template/5/app/img/b1.jpg'></image>
+        </view>
+      </view>
+      <!--底部,个人信息，赞和查看数量  -->
+      <view class='main_blok_butt'>
+        <view class='butt_left'>
+          <image src='http://tpl.amazeui.org/template/5/app/img/c1.jpg'></image>
+          <text> BigTree </text>
+          <text style='font-size:10px;color:#ccc'>12-10 AT 12:33</text>
+        </view>
+        <view class='butt_right'>
+         <image src='/we7/resource/icon/eye44.png'></image>1600
+          <image src='/we7/resource/icon/like67.png'></image>8000
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<import src="/we7/pages/templates/footer.wxml"/>

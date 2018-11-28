@@ -1,0 +1,3 @@
+<view class='common-post flex-y-center flex-x-center' bindtap='goToPost'>
+  <image src='/images/post.png'></image>
+</view>

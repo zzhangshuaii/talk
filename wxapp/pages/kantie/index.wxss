@@ -1,0 +1,78 @@
+/* pages/kantie/index.wxss */
+/* .scroll-view-x{
+    background-color: #fff;
+    white-space: nowrap;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    border-bottom:2rpx solid #D2CFD0;
+    height: 80rpx;
+}
+.scroll-view-x .scroll-view-item{
+    display:inline-block;
+    margin: 16rpx 0 0 0;
+    padding:0 60rpx 0rpx 60rpx ;
+    font-size: 12pt;
+    color:#71757B;
+    height:60rpx;
+    line-height: 60rpx;
+    white-space: nowrap;
+}
+.scroll-view-y{
+    border-top:1px solid #cccccc;
+    border-bottom:1px solid #cccccc;
+}
+swiper{
+    height: 304rpx;
+}
+.scroll-view-x .active{
+    color: #222222;
+    border-bottom: 4rpx solid #00C4CD;
+     height: 60rpx; 
+}
+.after-navber{
+  margin-top:90rpx;
+} */
+
+.body{
+  background-color: #fff;
+}
+.parent{
+  width: 260rpx;
+  background-color: #eeeae7;
+  height: auto;
+  font-size: 11pt;
+  color: #a6a6a6;
+}
+.scroll-view-item{
+   height: 120rpx; 
+  padding-left: 24rpx;
+}
+.scroll-view-item.active{
+  border-left: 4px solid #00C4CD;
+  color: #00C4CD;
+  background-color: #fff;
+}
+
+.children{
+  padding: 0 24rpx;
+}
+.children-title{
+  font-size: 11pt;
+  height: 80rpx;
+  border-bottom: 1rpx solid #e2e2e2;
+}
+.children-item{
+   padding: 24rpx 0; 
+  display: inline-block;
+  width: 147rpx;
+  
+}
+.children-item-pic image{
+  width: 68rpx;
+  height: 68rpx;
+}
+.children-item-name{
+  font-size: 8pt;
+  color: #2f2f2f;
+}

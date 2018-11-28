@@ -1,0 +1,15 @@
+<!--pages/login/login.wxml-->
+<view class='body'>
+  <view class='top-logo flex-row flex-y-center flex-x-center'>
+    <image src='/images/small-program.png'></image>
+  </view>
+  <view class='login-text-1 flex-row flex-y-center'>
+    申请获取一下权限
+  </view>
+  <view class='login-text-2 flex-row flex-y-center'>
+    获得你的公开信息（昵称，头像等）
+  </view>
+  <view class='flex-row flex-y-cneter flex-x-center'>
+    <button open-type='getUserInfo' bindgetuserinfo="getLogin" class='login-btn flex-grow-0 flex-y-center flex-x-center'>授权登录</button>
+  </view>
+</view>
