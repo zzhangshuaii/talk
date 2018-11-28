@@ -18,6 +18,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+  },
+
+  //下拉刷新
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+
+    this.onLoad()
+
+    wx.hideNavigationBarLoading() //完成停止加载
+    wx.stopPullDownRefresh() //停止下拉刷新
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     var page = this;
     var type = "2";//options.type;
 
@@ -47,29 +70,6 @@ Page({
       }
     });
     page.getListInfo();
-  },
-
-  //下拉刷新
-  onPullDownRefresh: function () {
-    wx.showNavigationBarLoading() //在标题栏中显示加载
-
-    this.onLoad()
-
-    wx.hideNavigationBarLoading() //完成停止加载
-    wx.stopPullDownRefresh() //停止下拉刷新
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
   },
 
   /**

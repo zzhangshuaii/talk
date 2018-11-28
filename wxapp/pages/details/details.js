@@ -61,6 +61,9 @@ Page({
     var page = this;
     var options = {id:page.data.data.id};
     page.getDetailsInfo(options);
+
+    wx.hideNavigationBarLoading() //完成停止加载
+    wx.stopPullDownRefresh() //停止下拉刷新
   },
 
   /**
@@ -95,7 +98,7 @@ Page({
         id: options.id,
       },
       success: function (res) {
-        console.log(res);
+        //console.log(res);
         if (res.code == 0) {
           var posts_content = res.data.posts_content;
           wxParse.wxParse("detail", "html", posts_content, page);
@@ -112,7 +115,7 @@ Page({
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
-                console.log('用户点击确定')
+                //console.log('用户点击确定')
               }
             }
           })
@@ -122,7 +125,7 @@ Page({
         setTimeout(function () {
           // 延长一秒取消加载动画
           wx.hideLoading();
-        }, 1000);
+        }, 500);
       }
     });
   },  
@@ -144,7 +147,7 @@ Page({
         post_id: post_id,
       },
       success: function (res) {
-        console.log(res);
+        //console.log(res);
         if (res.code == 0) {
           page.setData({
             comments : res.data,
@@ -156,7 +159,7 @@ Page({
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
-                console.log('用户点击确定')
+                //console.log('用户点击确定')
               }
             }
           })
@@ -166,7 +169,7 @@ Page({
         setTimeout(function () {
           // 延长一秒取消加载动画
           wx.hideLoading();
-        }, 1000);
+        }, 500);
       }
     });
   },
@@ -215,10 +218,11 @@ Page({
    * 发送评论
    */
   sendCommentText:function(e) {
+    console.log("发送评论");
     var page = this;
     var commentText = page.data.commentText;
     var to_pid = page.data.c_id;
-    console.log(commentText);
+    //console.log(commentText);
     if(commentText==''){
       wx.showModal({
         title: '错误',
@@ -226,7 +230,7 @@ Page({
         showCancel:false,
         success: function (res) {
           if (res.confirm) {
-            console.log('用户点击确定')
+            //console.log('用户点击确定')
           }
         }
       });
@@ -246,7 +250,7 @@ Page({
         to_uid: page.data.commentId
       },
       success: function (res) {
-        console.log(res);
+        console.log("评论发送成功");
         if (res.code == 0) {
           var options = { id: page.data.data.id };
           page.getDetailsInfo(options);
@@ -260,17 +264,18 @@ Page({
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
-                console.log('用户点击确定')
+                //console.log('用户点击确定')
               }
             }
           })
         }
       },
       complete: function () {
+        this.onLoad();
         setTimeout(function () {
           // 延长一秒取消加载动画
           wx.hideLoading();
-        }, 1000);
+        }, 500);
       }
     });
   },
@@ -290,7 +295,7 @@ Page({
         post_id: page.data.data.id,
       },
       success: function (res) {
-        console.log(res);
+        //console.log(res);
         if (res.code == 0) {
           var data = page.data.data;
           data.collection = true;
@@ -309,7 +314,7 @@ Page({
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
-                console.log('用户点击确定')
+                //console.log('用户点击确定')
               }
             }
           })
@@ -319,7 +324,7 @@ Page({
         setTimeout(function () {
           // 延长一秒取消加载动画
           wx.hideLoading();
-        }, 1000);
+        }, 500);
       }
     });
   },
@@ -350,7 +355,7 @@ Page({
         post_id: page.data.data.id,
       },
       success: function (res) {
-        console.log(res);
+        //console.log(res);
         if (res.code == 0) {
           var data = page.data.data;
           data.like = true;
@@ -369,7 +374,7 @@ Page({
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
-                console.log('用户点击确定')
+                //console.log('用户点击确定')
               }
             }
           })
@@ -379,7 +384,7 @@ Page({
         setTimeout(function () {
           // 延长一秒取消加载动画
           wx.hideLoading();
-        }, 1000);
+        }, 500);
       }
     });
   },

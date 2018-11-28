@@ -22,8 +22,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#292C33",
     "navigationBarTitleText": "上科大Talk",
-    "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": true
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "backgroundColor": "#FFFFFF",
