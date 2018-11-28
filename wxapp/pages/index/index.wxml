@@ -10,7 +10,7 @@
           <view class='choice-user-name flex-grow-0 flex-y-center'>
             {{item.nickname}}
           </view>
-
+          
           <!--view class='choice-user-level flex-grow-0 flex-y-center'>
             Lv1
           </view-->

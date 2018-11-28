@@ -32,7 +32,7 @@
                   </view>   -->
     </view>
     <view class='time flex-grow-0 flex-y-center'>
-      {{data.word_time}}2
+      {{data.word_time}}
     </view>
   </view>
 
