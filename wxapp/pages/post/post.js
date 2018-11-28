@@ -123,8 +123,8 @@ Page({
         page.setData({
           imageList: image_list,
         })
-        console.log(tempFilePaths);
-        console.log(res);
+        //console.log(tempFilePaths);
+        //console.log(res);
       }
     })
   },
@@ -132,10 +132,10 @@ Page({
    * 删除图片
    */
   clonsImage:function(e){
-    console.log(e);
+    //console.log(e);
     var page = this;
     var key = e.currentTarget.dataset.key;
-    console.log(key);
+    //console.log(key);
     var imageList = page.data.imageList;
     // 删除数组中制定元素
     imageList.splice(key, 1);
@@ -154,7 +154,7 @@ Page({
       class_name: fristClass[index]['class_name'],
       class_id: fristClass[index]['id'],
     });
-    console.log(fristClass[index]['id']);
+    //console.log(fristClass[index]['id']);
     page.getLabelApi(fristClass[index]['id']);
   },
   /**
@@ -197,7 +197,7 @@ Page({
       url: 'article_class/index',
       method: 'get',
       success: function (res) {
-        console.log(res);
+        //console.log(res);
         if (res.code == 0) {
           page.setData({
             fristClass: res.data,
@@ -210,7 +210,7 @@ Page({
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
-                console.log('用户点击确定')
+                //console.log('用户点击确定')
               }
             }
           })
@@ -241,7 +241,7 @@ Page({
         id: id,
       },
       success: function (res) {
-        console.log(res);
+        //console.log(res);
         if (res.code == 0) {
           page.setData({
             towClass: res.data,
@@ -253,7 +253,7 @@ Page({
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
-                console.log('用户点击确定')
+                //console.log('用户点击确定')
               }
             }
           })
@@ -292,7 +292,7 @@ Page({
     var page = this;
     var data = {};
     if (!page.data.title){
-      console.log(11);
+      //console.log(11);
       wx.showModal({
         title: '错误',
         content: '标题不能为空',
@@ -320,7 +320,8 @@ Page({
       return;
     }
     data.content = page.data.content;
-    if (!page.data.class_id) {
+
+    /*if (!page.data.class_id) {
       wx.showModal({
         title: '错误',
         content: '请选择分类',
@@ -332,9 +333,11 @@ Page({
         }
       });
       return;
-    }
-    data.class_id = page.data.class_id;
-    var label = [];
+    }*/
+    data.class_id = 14;//page.data.class_id;
+    //console.log("------------");
+      // console.log(data.class_id);
+      /*var label = [];
     for (var c in page.data.towClass){
       if (page.data.towClass[c].selected){
         label.push(page.data.towClass[c].id);
@@ -352,9 +355,9 @@ Page({
         }
       });
       return;
-    }
-    data.label = label;
-
+    }*/
+    data.label = [16]; //label;
+    //console.log(data.label);
     var url = app.getUrl();
     var imageList = page.data.imageList;
     if(imageList.length > 0){
@@ -373,9 +376,9 @@ Page({
           },
           header: { "Content-Type": "application/x-www-form-urlencoded" },
           success: function (res) {
-              console.log(typeof res);
+              //console.log(typeof res);
             var res = JSON.parse(res.data);
-            console.log(res);
+            //console.log(res);
             if (res.code == 0){
               var images = page.data.images.concat(res.data);
               page.setData({
@@ -393,7 +396,7 @@ Page({
                 showCancel: false,
                 success: function (res) {
                   if (res.confirm) {
-                    console.log('用户点击确定')
+                    //console.log('用户点击确定')
                   }
                 }
               });
@@ -407,7 +410,7 @@ Page({
               showCancel:true,
               success: function (res) {
                 if (res.confirm) {
-                  console.log('用户点击确定')
+                  //console.log('用户点击确定')
                 }
               }
             });
@@ -438,8 +441,8 @@ Page({
             icon: 'success',
             duration: 2000
           });
-          wx.redirectTo({
-            url: '/pages/my-post/my-post'
+          wx.switchTab({
+            url: '/pages/index/index'
           })
         } else {
           wx.showModal({
@@ -448,7 +451,7 @@ Page({
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
-                console.log('用户点击确定')
+                //console.log('用户点击确定')
               }
             }
           });

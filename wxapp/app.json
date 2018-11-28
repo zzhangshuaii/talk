@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/kantie/index",
     "pages/details/details",
@@ -18,32 +18,32 @@
     "pages/web/web",
     "pages/login/login"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#292C33",
-    "navigationBarTitleText": "论坛",
-    "navigationBarTextStyle":"white"
+    "navigationBarTitleText": "上科大Talk",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "backgroundColor":"#FFFFFF",
-    "selectedColor":"#222222",
-    "color":"#71757B",
+    "backgroundColor": "#FFFFFF",
+    "selectedColor": "#222222",
+    "color": "#71757B",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath":"/images/index.png",
-        "selectedIconPath":"/images/index-active.png"
+        "text": "Talk",
+        "iconPath": "/images/index.png",
+        "selectedIconPath": "/images/index-active.png"
       },
       {
-        "pagePath": "pages/kantie/index",
-        "text": "看帖",
-        "iconPath": "/images/look.png",
-        "selectedIconPath": "/images/look-active.png"
+        "pagePath": "pages/post/post",
+        "text": "发帖",
+        "iconPath": "/images/index.png",
+        "selectedIconPath": "/images/index-active.png"
       },
       {
         "pagePath": "pages/user/user",
-        "text": "我的",
+        "text": "我",
         "iconPath": "/images/user.png",
         "selectedIconPath": "/images/user-active.png"
       }

@@ -114,10 +114,10 @@ Page({
           });
           wx.setStorage({
               key: "wxapp_name",
-              data: res.data.wxapp_name ? res.data.wxapp_name:'论坛',
+              data: res.data.wxapp_name ? res.data.wxapp_name:'上科大Talk',
           });
           wx.setNavigationBarTitle({
-              title: res.data.wxapp_name ? res.data.wxapp_name : '论坛',
+              title: res.data.wxapp_name ? res.data.wxapp_name : '上科大Talk',
           });
         } else {
           wx.showModal({

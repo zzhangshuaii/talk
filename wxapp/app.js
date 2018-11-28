@@ -139,7 +139,9 @@ App({
         wx.showToast({
           title: res.errMsg,
           image: "/images/longing-error.png",
+         
         });
+        //console.log(res.msg);
         if (obj.fail)
           obj.fail(res);
         // }

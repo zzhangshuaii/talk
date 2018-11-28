@@ -2,7 +2,7 @@
 <view class="container">
 <!--导航开始  -->
   <view class="btn-area">
-    <navigator url="/we7/pages/index/index"  open-type='redirectTo'>首页 </navigator>
+    <navigator url="/we7/pages/index/index"  open-type='redirectTo'>F首页 </navigator>
       <view wx:if="{{statu == 1}}">
       <navigator url="/we7/pages/home/index?title=热门 Hot&statu=1" open-type="redirectTo" hover-class="other-navigator-hover"  style='border-bottom: 2px solid #01c4c9;color:#000;'>热门</navigator>
       </view>

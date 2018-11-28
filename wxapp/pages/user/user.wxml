@@ -61,7 +61,7 @@
         <image src='/images/right-icon.png'></image>
       </view>
     </navigator>
-    <navigator open-type='navigate' url='/pages/wallet/wallet' class='flex-row about-row-item flex-y-center' style='border:0'>
+    <!--navigator open-type='navigate' url='/pages/wallet/wallet' class='flex-row about-row-item flex-y-center' style='border:0'>
       <view class='flex-grow-0 about-icon flex-y-center'>
         <image src='/images/wallet-icon.png'></image>
       </view>
@@ -74,7 +74,7 @@
       <view class='flex-grow-0 about-right flex-y-center'>
         <image src='/images/right-icon.png'></image>
       </view>
-    </navigator>
+    </navigator-->
   </view>
   <view class='about-row'>
     <view class='flex-row about-row-item flex-y-center' bindtap="goToExplain">
@@ -82,13 +82,13 @@
         <image src='/images/about-icon.png'></image>
       </view>
       <view class='flex-grow-1 about-item-title flex-y-center'>
-        关于我们
+        欢迎加入我们，一起开发！
       </view>
       <view class='flex-grow-0 about-right flex-y-center'>
         <image src='/images/right-icon.png'></image>
       </view>
     </view>
-    <view class='flex-row about-row-item flex-y-center' bindtap="callTel">
+    <!--view class='flex-row about-row-item flex-y-center' bindtap="callTel">
       <view class='flex-grow-0 about-icon flex-y-center'>
         <image src='/images/call-icon.png'></image>
       </view>
@@ -98,13 +98,13 @@
       <view class='flex-grow-0 about-right flex-y-center'>
         <image src='/images/right-icon.png'></image>
       </view>
-    </view>
+    </view-->
     <button open-type="contact" class='flex-row about-row-item flex-y-center' style='border:0'>
       <view class='flex-grow-0 about-icon flex-y-center'>
         <image src='/images/server-icon.png'></image>
       </view>
       <view class='flex-grow-1 about-item-title flex-y-center'>
-        在线客服
+        问题反馈
       </view>
       <view class='flex-grow-0 about-right flex-y-center'>
         <image src='/images/right-icon.png'></image>

@@ -11,7 +11,7 @@
       <view class='close-image flex-y-center flex-x-center' data-key='{{idx}}' bindtap='clonsImage'>
         <image src='/images/clonse-icon.png'></image>
       </view>
-      <view class='post-image-item-pic flex-y-center flex-x-center' data-key='{{idx}}' bindtap='showBigImages'>
+      <view classF='post-image-item-pic flex-y-center flex-x-center' data-key='{{idx}}' bindtap='showBigImages'>
         <image src='{{item}}'></image>
       </view>
     </view>
@@ -26,7 +26,8 @@
       </view>
     </view>
   </view>
-  <view class='class_label'>
+
+  <!--view class='class_label'>
     <view class="class flex-row flex-y-center">
       <view class='class_title flex-grow-0'>请选择分类</view>
       <view class='flex-grow-1 flex-row'>
@@ -50,7 +51,7 @@
         </view>
       </block>
     </view>
-  </view>
+  </view-->
 </view>
 
 

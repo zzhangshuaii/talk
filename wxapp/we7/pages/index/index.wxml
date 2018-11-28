@@ -6,6 +6,7 @@
       <navigator url="/we7/pages/home/index?title=热门 Hot&statu=1" open-type="redirectTo" hover-class="other-navigator-hover">热门</navigator>
     <navigator url="/we7/pages/home/index?title=最新 New&statu=2" open-type="redirect" hover-class="other-navigator-hover">最新</navigator>
   </view>
+ 
   <!--导航结束  -->
   <!--轮播图开始  -->
 	<view class="swiper">
@@ -58,6 +59,8 @@
           <image src='http://tpl.amazeui.org/template/5/app/img/b1.jpg'></image>
         </view>
       </view>
+
+      
       <!--底部,个人信息，赞和查看数量  -->
       <view class='main_blok_butt'>
         <view class='butt_left'>
