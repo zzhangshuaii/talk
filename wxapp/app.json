@@ -21,7 +21,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "上科大Talk",
+    "navigationBarTitleText": "上科大同学圈",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -31,14 +31,14 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "Talk",
+        "text": "同学圈",
         "iconPath": "/images/index.png",
         "selectedIconPath": "/images/index-active.png"
       },
       {
         "pagePath": "pages/post/post",
-        "text": "发帖",
         "iconPath": "/images/post.png",
+        "text": "发帖",
         "selectedIconPath": "/images/post.png"
       },
       {

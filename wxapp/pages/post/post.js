@@ -307,7 +307,7 @@ Page({
     }
     data.title = page.data.title;
     if (!page.data.content) {
-      wx.showModal({
+      /*wx.showModal({
         title: '错误',
         content: '内容不能为空',
         showCancel: false,
@@ -316,8 +316,9 @@ Page({
             console.log('用户点击确定')
           }
         }
-      });
-      return;
+      });*/
+      page.data.content=" ";
+      //return;
     }
     data.content = page.data.content;
 

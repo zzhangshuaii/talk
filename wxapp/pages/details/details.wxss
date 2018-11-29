@@ -21,7 +21,7 @@
 }
 .user-name{
   font-size: 10pt;
-  color: #00C4CD;
+  color: #000;
   margin-right: 10rpx;
 }
 .user-level{
@@ -101,7 +101,7 @@
 }
 .comment-user-name{
   font-size: 10pt;
-  color: #00C4CD;
+  color: #000;
 }
 .comment-user-time{
   font-size:9pt;
