@@ -6,7 +6,7 @@
       <view class='user-pic flex-grow-0 flex-row flex-x-center'>
         <image src='{{userinfo.avatar}}'></image>
       </view>
-      <view class='user-name flex-grow-0 flex-row flex-x-center' style='color:#00c4cd;'>
+      <view class='user-name flex-grow-0 flex-row flex-x-center' style='color:#000;'>
         {{userinfo.nickname}}
       </view>
         <!-- <Sign id="sign" bindtap="signEvent"></Sign> -->
@@ -35,7 +35,7 @@
   <view class='about-row'>
     <navigator open-type='navigate' url='/pages/my-message/my-message' class='flex-row about-row-item flex-y-center'>
       <view class='flex-grow-0 about-icon flex-y-center'>
-        <image src='/images/message-icon.png'></image>
+        <image src='/images/envelope.png'></image>
       </view>
       <view class='flex-grow-1 about-item-title flex-y-center'>
         我的消息

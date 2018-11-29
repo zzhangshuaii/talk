@@ -18,33 +18,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
-
-  //下拉刷新
-  onPullDownRefresh: function () {
-    wx.showNavigationBarLoading() //在标题栏中显示加载
-
-    this.onLoad()
-
-    wx.hideNavigationBarLoading() //完成停止加载
-    wx.stopPullDownRefresh() //停止下拉刷新
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
     var page = this;
     var type = "2";//options.type;
 
+    // 初始化data
     this.data.special = []
+    this.data.showLoading = false;
+    this.data.showNoContent = false;
+
     pageNum = 1;
     switch (type) {
       case "1":
@@ -72,6 +53,29 @@ Page({
     page.getListInfo();
   },
 
+  //下拉刷新
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+
+    this.onLoad()
+
+    wx.hideNavigationBarLoading() //完成停止加载
+    wx.stopPullDownRefresh() //停止下拉刷新
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  
+  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -90,13 +94,20 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    
+
     var page = this;
     if (page.data.showNoContent) {
       return;
     }
+    //console.log("Page+++++++++++++++++++++++1");
+    console.log("nocontenc  t" + page.data.showNoContent);
+    
+
     page.setData({
       showLoading: true,
     });
+
     if (page.data.total_page <= pageNum) {
       page.setData({
         showLoading: false,
@@ -114,6 +125,42 @@ Page({
   onShareAppMessage: function () {
 
   },
+   /**
+   * 点赞
+   */
+  saveLike:function (e){
+    console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLike   "+e.currentTarget.dataset.id)
+    var page = this;
+    var id = e.currentTarget.dataset.id;
+    wx.showLoading({
+      title: '加载中',
+      mask: true,
+    });
+            page.setData({
+          likeid:id,
+        });
+    app.request({
+      url: 'collection/setLike',
+      method: 'GET',
+      data: {
+        post_id: id,
+      },
+      success: function (res) {
+
+        wx.showToast({
+            title: '点赞成功',
+            icon: 'success',
+            duration: 2000
+          });
+      },
+      complete: function () {
+        setTimeout(function () {
+          // 延长一秒取消加载动画
+          wx.hideLoading();
+        }, 500);
+      }
+    });
+  },
   /**
    * 获取列表数据
    */
@@ -130,6 +177,8 @@ Page({
         if (res.code == 0) {
           var special = page.data.special.concat(res.data.list);
 
+           console.log("--------------special-------------------------");
+          console.log(special);
           page.setData({
             special: special,
             total: res.data.total,

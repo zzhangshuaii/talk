@@ -171,25 +171,25 @@
   </view>
   <view style='height:100%;' class='flex-grow-1 flex-y-center flex-row'>
     <view class='flex-grow-1 flex-y-center footer-item'>
-      <image src='/images/comment-details-footer.png'></image>
+      <image src='/images/comment1.png'></image>
       <view>{{data.comment_nums}}</view>
     </view>
     <view class='flex-grow-1 flex-y-center footer-item' wx:if="{{data.like}}">
-      <image src='/images/good-details-footer-active.png'></image>
+      <image src='/images/heart1.png'></image>
       <view>{{data.posts_like}}</view>
     </view>
     <view class='flex-grow-1 flex-y-center footer-item' wx:else bindtap='saveLike'>
-      <image src='/images/good-details-footer.png'></image>
+      <image src='/images/heart.png'></image>
       <view>{{data.posts_like}}</view>
     </view>
     <view class='flex-grow-1 footer-item flex-y-center' wx:if="{{data.collection}}">
-      <image src='/images/collection-icon-active.png'></image>
+      <image src='/images/star1.png'></image>
     </view>
     <view class='flex-grow-1 flex-y-center footer-item' wx:else bindtap='saveCollection'>
-      <image src='/images/collection-icon.png'></image>
+      <image src='/images/star.png'></image>
     </view>
     <button class='flex-grow-1 flex-y-center footer-item' open-type="share">
-      <image src='/images/share-details-footer.png'></image>
+      <image src='/images/share.png'></image>
     </button>
   </view>
 </view>

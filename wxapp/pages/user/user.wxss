@@ -9,7 +9,7 @@
 }
 .user-info{
   position: absolute;
-  top: 200rpx;
+  top: 80rpx;
   left: 0rpx;
   width: 100%;
   text-align: center;
@@ -17,10 +17,11 @@
   font-size: 12pt;
 }
 .user-pic image{
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
   border: 2rpx solid #ffffff;
+  margin-bottom: 30rpx;
 }
 .my-item-img image{
   width: 60rpx;
@@ -77,5 +78,5 @@ button::after {
 
 .about-bubble{
   font-size: 11pt;
-  color: #00C4CD;
+  color: #000;
 }

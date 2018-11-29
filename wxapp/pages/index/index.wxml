@@ -35,9 +35,10 @@
                     <image src='/images/comment1.png'></image>
                     {{item.comment_nums}}
                 </view>
-                <view class='choice-fabulous flex-grow-0 flex-x-center flex-y-center'>
-                    <image src='/images/heart.png'></image>
-                    {{item.posts_like}}
+                <view class='choice-fabulous flex-grow-0 flex-x-center flex-y-center' data-id="{{item.id}}" bindtap="saveLike">
+                    <image src='/images/heart1.png' wx:if="{{likeid == item.id}}" ></image>
+                    <image src='/images/heart.png' wx:else ></image>
+                    {{item.posts_like}} 
                 </view>
             </view>
         </view>

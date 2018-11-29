@@ -98,6 +98,7 @@ Page({
         id: options.id,
       },
       success: function (res) {
+        console.log("-------------detail data---------------")
         console.log(res);
         if (res.code == 0) {
           var posts_content = res.data.posts_content;
@@ -147,6 +148,7 @@ Page({
         post_id: post_id,
       },
       success: function (res) {
+        
         //console.log(res);
         if (res.code == 0) {
           page.setData({
@@ -355,13 +357,13 @@ Page({
         post_id: page.data.data.id,
       },
       success: function (res) {
-        //console.log(res);
+        console.log("zzzzzzzzzz   "+res);
         if (res.code == 0) {
-          var data = page.data.data;
+          /*var data = page.data.data;
           data.like = true;
           page.setData({
             data: data,
-          });
+          });*/
           wx.showToast({
             title: '点赞成功',
             icon: 'success',

@@ -25,15 +25,15 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "backgroundColor": "#FFFFFF",
+    "backgroundColor": "#fff",
     "selectedColor": "#222222",
     "color": "#71757B",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "同学圈",
-        "iconPath": "/images/index.png",
-        "selectedIconPath": "/images/index-active.png"
+        "iconPath": "/images/focus.png",
+        "selectedIconPath": "/images/focus1.png"
       },
       {
         "pagePath": "pages/post/post",
@@ -45,7 +45,7 @@
         "pagePath": "pages/user/user",
         "text": "我",
         "iconPath": "/images/user.png",
-        "selectedIconPath": "/images/user-active.png"
+        "selectedIconPath": "/images/user1.png"
       }
     ]
   }
