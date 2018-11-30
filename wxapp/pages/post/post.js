@@ -1,5 +1,7 @@
 // pages/post/post.js
 const app = getApp();
+var my_lable = [16];
+
 Page({
 
   /**
@@ -35,8 +37,18 @@ Page({
     content:'',
     towClass:[],
     images:[],
+    checked: false
   },
 
+  onChange(event) {
+    // 需要手动对 checked 状态进行更新
+    this.setData({ checked: event.detail });
+    if(event.detail){
+      my_lable=[17];
+    }else{
+      my_lable[16];
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -357,7 +369,7 @@ Page({
       });
       return;
     }*/
-    data.label = [16]; //label;
+    data.label = my_lable; //label;
     //console.log(data.label);
     var url = app.getUrl();
     var imageList = page.data.imageList;

@@ -185,6 +185,7 @@ Page({
    * 前往发帖
    */
   goToPost: function (e) {
+    console.log("go to post");
     wx.navigateTo({
       url: '/pages/post/post',
       success: function (res) { },

@@ -3,6 +3,7 @@ const app = getApp();
 var url = '';
 var pageNum = 1;
 var label = '';
+var my_lable=16;
 Page({
 
   /**
@@ -14,12 +15,20 @@ Page({
     showNoContent: false,
   },
 
+  // change the tab bar
+  onChange(event) {
+
+      my_lable = 16 + event.detail.index;
+      this.onLoad();
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
     var page = this;
-    var type = "2";//options.type;
+    var type = "3";//options.type;
 
     // 初始化data
     this.data.special = []
@@ -36,7 +45,7 @@ Page({
         break;
       case "3":
         url = 'article_list/labelArticle';  // 根据标签进入列表
-        label = options.label;
+        label = my_lable;
         break;
       default:
         console.log("default");
@@ -73,7 +82,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
@@ -94,7 +103,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+
 
     var page = this;
     if (page.data.showNoContent) {
@@ -102,7 +111,7 @@ Page({
     }
     //console.log("Page+++++++++++++++++++++++1");
     console.log("nocontenc  t" + page.data.showNoContent);
-    
+
 
     page.setData({
       showLoading: true,
@@ -125,20 +134,20 @@ Page({
   onShareAppMessage: function () {
 
   },
-   /**
-   * 点赞
-   */
-  saveLike:function (e){
-    console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLike   "+e.currentTarget.dataset.id)
+  /**
+  * 点赞
+  */
+  saveLike: function (e) {
+    console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLike   " + e.currentTarget.dataset.id)
     var page = this;
     var id = e.currentTarget.dataset.id;
     wx.showLoading({
       title: '加载中',
       mask: true,
     });
-            page.setData({
-          likeid:id,
-        });
+    page.setData({
+      likeid: id,
+    });
     app.request({
       url: 'collection/setLike',
       method: 'GET',
@@ -148,10 +157,10 @@ Page({
       success: function (res) {
 
         wx.showToast({
-            title: '点赞成功',
-            icon: 'success',
-            duration: 2000
-          });
+          title: '点赞成功',
+          icon: 'success',
+          duration: 2000
+        });
       },
       complete: function () {
         setTimeout(function () {
@@ -165,7 +174,7 @@ Page({
    * 获取列表数据
    */
   getListInfo: function () {
-    
+
     var page = this;
     app.request({
       url: url,
@@ -177,7 +186,7 @@ Page({
         if (res.code == 0) {
           var special = page.data.special.concat(res.data.list);
 
-           console.log("--------------special-------------------------");
+          console.log("--------------special-------------------------");
           console.log(special);
           page.setData({
             special: special,
@@ -211,7 +220,7 @@ Page({
       }
     });
   },
- 
+
   /**
    * 前往文章详情
    */

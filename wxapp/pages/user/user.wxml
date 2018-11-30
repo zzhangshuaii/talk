@@ -17,20 +17,20 @@
       <view class='my-item-img'>
         <image src='/images/collection-icon.png'></image>
       </view>
-      <view class='my-item-name'>收藏</view>
+      <view class='my-item-name'>我的收藏</view>
     </view>
     <navigator open-type='navigate' url='/pages/my-comment/my-comment' class='my-item flex-grow-1 flex-col flex-x-center flex-y-center'>
       <view class='my-item-img'>
         <image src='/images/comment-icon.png'></image>
       </view>
-      <view class='my-item-name'>评论</view>
+      <view class='my-item-name'>我的评论</view>
     </navigator>
-    <view class='my-item flex-grow-1 flex-col flex-x-center flex-y-center' bindtap='goToPost'>
-      <view class='my-item-img'>
-        <image src='/images/post-icon.png'></image>
-      </view>
-      <view class='my-item-name'>发帖</view>
-    </view>
+<!--     <view class='my-item flex-grow-1 flex-col flex-x-center flex-y-center' bindtap='goToPost'>
+  <view class='my-item-img'>
+    <image src='/images/post-icon.png'></image>
+  </view>
+  <view class='my-item-name'>发帖</view>
+</view> -->
   </view> 
   <view class='about-row'>
     <navigator open-type='navigate' url='/pages/my-message/my-message' class='flex-row about-row-item flex-y-center'>

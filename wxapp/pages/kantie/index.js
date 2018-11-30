@@ -201,6 +201,7 @@ Page({
     var page = this;
     var type = e.currentTarget.dataset.type;
     var label = e.currentTarget.dataset.id;
+    console.log(label);
     wx.navigateTo({
       url: '/pages/list/list?type=' + type + "&label=" + label,
     })

@@ -3,14 +3,23 @@
   <view class='title flex-row'>
     {{data.posts_title}}
   </view>
-  <view class='flex-row subtitle' wx:if="{{data.admin_id != 1}}">
+  <view class='flex-row subtitle'>
     <view class='user-info flex-grow-1 flex-row flex-y-center'>
-      <view class='user-pic flex-grow-0 flex-y-center'>
+
+      <view class='user-pic flex-grow-0 flex-y-center' wx:if="{{item.label_ids=='16,'}}">
         <image src='{{data.user_info.avatar}}'></image>
       </view>
-      <view class='user-name flex-grow-0 flex-y-center'>
+      <view class='user-pic flex-grow-0 flex-y-center' wx:else>
+        <image src='/images/hacker.png'></image>
+      </view>
+
+      <view class='user-name flex-grow-0 flex-y-center ' wx:if="{{item.label_ids=='16,'}}">
         {{data.user_info.nickname}}
       </view>
+      <view class='user-name flex-grow-0 flex-y-center ' wx:else>
+        闷声发
+      </view>
+
       <!--view class='user-level flex-grow-0 flex-y-center'>
                 Lv 1
             </view-->

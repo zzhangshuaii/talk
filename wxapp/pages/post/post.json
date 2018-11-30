@@ -1,3 +1,6 @@
 {
-      "navigationBarTitleText": "发新帖"
+  "navigationBarTitleText": "发新帖",
+  "usingComponents": {
+    "van-switch-cell": "/dist/switch-cell/index"
+  }
 }

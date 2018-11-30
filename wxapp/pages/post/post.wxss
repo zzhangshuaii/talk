@@ -71,8 +71,9 @@ page{
   width: 100%;
 }
 .post-image-item-pic image{
-  width: 190rpx;
-  height: 190rpx;
+  max-width: 200rpx;
+  max-height: 200rpx;
+  border-radius: 8%;
 }
 .close-image image{
   width: 70%;
