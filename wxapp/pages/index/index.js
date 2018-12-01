@@ -4,6 +4,8 @@ var url = '';
 var pageNum = 1;
 var label = '';
 var my_lable=16;
+var  Base64  =  require('js-base64').Base64;
+
 Page({
 
   /**
@@ -183,11 +185,22 @@ Page({
       success: function (res) {
         console.log("--------------index page data-------------------------");
         console.log(res);
+
         if (res.code == 0) {
+
+          for (var each in res.data.list) {
+            var post = res.data.list[each];
+            //console.log();
+            post.posts_title = Base64.decode(post.posts_title);
+            post.posts_content = Base64.decode(post.posts_content);
+            res.data.list[each] = post;
+          }
+
           var special = page.data.special.concat(res.data.list);
 
           console.log("--------------special-------------------------");
           console.log(special);
+
           page.setData({
             special: special,
             total: res.data.total,

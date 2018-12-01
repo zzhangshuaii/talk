@@ -1,6 +1,7 @@
 // pages/post/post.js
 const app = getApp();
 var my_lable = [16];
+var Base64 = require('js-base64').Base64;
 
 Page({
 
@@ -317,7 +318,7 @@ Page({
       });
       return;
     }
-    data.title = page.data.title;
+    data.title = Base64.encode(page.data.title);
     if (!page.data.content) {
       /*wx.showModal({
         title: '错误',
@@ -332,7 +333,7 @@ Page({
       page.data.content=" ";
       //return;
     }
-    data.content = page.data.content;
+    data.content = Base64.encode(page.data.content);
 
     /*if (!page.data.class_id) {
       wx.showModal({

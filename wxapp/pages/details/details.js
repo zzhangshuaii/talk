@@ -1,6 +1,7 @@
 // pages/details/details.js
 var app = getApp();
 var wxParse = require('../../wxParse/wxParse.js');
+var Base64 = require('js-base64').Base64;
 Page({
 
   /**
@@ -100,7 +101,12 @@ Page({
       success: function (res) {
         console.log("-------------detail data---------------")
         console.log(res);
+
+        res.data.posts_content = Base64.decode(res.data.posts_content);
+        res.data.posts_title = Base64.decode(res.data.posts_title);
+
         if (res.code == 0) {
+
           var posts_content = res.data.posts_content;
           wxParse.wxParse("detail", "html", posts_content, page);
           page.setData({
@@ -149,7 +155,11 @@ Page({
       },
       success: function (res) {
         
-        //console.log(res);
+        console.log(res.data);
+
+        for(var i in res.data){
+          res.data[i].content=Base64.decode(res.data[i].content);
+        }
         if (res.code == 0) {
           page.setData({
             comments : res.data,
@@ -222,7 +232,7 @@ Page({
   sendCommentText:function(e) {
     console.log("发送评论");
     var page = this;
-    var commentText = page.data.commentText;
+    var commentText = Base64.encode(page.data.commentText);
     var to_pid = page.data.c_id;
     //console.log(commentText);
     if(commentText==''){

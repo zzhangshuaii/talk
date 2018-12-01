@@ -1,6 +1,7 @@
 // pages/my-post/my-post.js
 const app = getApp();
 var pageNum = 1;
+var Base64 = require('js-base64').Base64;
 Page({
 
   /**
@@ -80,6 +81,12 @@ Page({
       success: function (res) {
         console.log(res);
         if (res.code == 0) {
+          for (var i in res.data.list) {
+            var temp = res.data.list[i];
+            temp.posts_content = Base64.decode(temp.posts_content);
+            temp.posts_title = Base64.decode(temp.posts_title);
+            res.data.list[i] = temp;
+          }
           page.setData({
             list: res.data.list,
             total: res.data.total,

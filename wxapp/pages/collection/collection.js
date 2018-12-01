@@ -1,4 +1,5 @@
 // pages/collection/collection.js
+var Base64 = require('js-base64').Base64;
 var app = getApp();
 Page({
 
@@ -84,6 +85,13 @@ Page({
       success: function (res) {
         console.log(res);
         if (res.code == 0) {
+          for (var i in res.data.list) {
+            console.log("dddddddddddddddddddd");
+            var temp = res.data.list[i];
+            temp.posts_content = Base64.decode(temp.posts_content);
+            temp.posts_title = Base64.decode(temp.posts_title);
+            res.data.list[i] = temp;
+          }
           page.setData({
             total_page:res.data.total_page,
             total:res.data.total,

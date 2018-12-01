@@ -1,6 +1,7 @@
 // pages/my-comment/my-comment.js
 const app = getApp();
 var pageNum = 1;
+var Base64 = require('js-base64').Base64;
 Page({
 
   /**
@@ -12,7 +13,7 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面加载
+ * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
       var page = this;
@@ -82,6 +83,13 @@ Page({
       },
       success: function (res) {
         console.log(res);
+        for(var i in res.data.list){
+          console.log("dddddddddddddddddddd");
+          var temp=res.data.list[i];
+          temp.content=Base64.decode(temp.content);
+          temp.posts_title=Base64.decode(temp.posts_title);
+          res.data.list[i]=temp;
+        }
         if (res.code == 0) {
           var list = page.data.list.concat(res.data.list);
           page.setData({
@@ -142,6 +150,13 @@ Page({
       success: function (res) {
         console.log(res);
         if (res.code == 0) {
+          for (var i in res.data.list) {
+            //console.log("dddddddddddddddddddd");
+            var temp = res.data.list[i];
+            temp.content = Base64.decode(temp.content);
+            temp.posts_title = Base64.decode(temp.posts_title);
+            res.data.list[i] = temp;
+          }
           page.setData({
             total_page: res.data.total_page,
             total: res.data.total,
