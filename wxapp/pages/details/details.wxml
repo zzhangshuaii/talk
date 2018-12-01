@@ -6,14 +6,14 @@
   <view class='flex-row subtitle'>
     <view class='user-info flex-grow-1 flex-row flex-y-center'>
 
-      <view class='user-pic flex-grow-0 flex-y-center' wx:if="{{item.label_ids=='16,'}}">
+      <view class='user-pic flex-grow-0 flex-y-center' wx:if="{{data.label_ids=='16,'}}">
         <image src='{{data.user_info.avatar}}'></image>
       </view>
       <view class='user-pic flex-grow-0 flex-y-center' wx:else>
         <image src='/images/hacker.png'></image>
       </view>
 
-      <view class='user-name flex-grow-0 flex-y-center ' wx:if="{{item.label_ids=='16,'}}">
+      <view class='user-name flex-grow-0 flex-y-center ' wx:if="{{data.label_ids=='16,'}}">
         {{data.user_info.nickname}}
       </view>
       <view class='user-name flex-grow-0 flex-y-center ' wx:else>
@@ -121,7 +121,7 @@
 </view-->
 <view class='comment-top flex-row flex-y-center'>
   <view class='flex-grow-0'>
-    最新评论
+    最新评论 
   </view>
 </view>
 <view class='comment-list'>
@@ -204,7 +204,7 @@
 </view>
 <view class="comment-play flex-row flex-y-center" wx:if='{{show_comment}}'>
   <view class="comment-input flex-grow-1 flex-y-center">
-    <input placeholder="写评论..." focus="false" value="{{commentText}}" type="text" bindinput="commentTixtTab" placeholder-class="comment-input-class" bindblur="hiddCommentPlay" confirm-type="发送" />
+    <input placeholder="写评论... 注意：评论不匿名" focus="false" value="{{commentText}}" type="text" bindinput="commentTixtTab" placeholder-class="comment-input-class" bindblur="hiddCommentPlay" confirm-type="发送" />
   </view>
   <view class="comment-play-btn flex-grow-0 flex-y-center flex-x-center" bindtap='sendCommentText'>
     发送

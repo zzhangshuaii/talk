@@ -147,9 +147,13 @@ Page({
       title: '加载中',
       mask: true,
     });
+
+    // Like change icon and count
+
     page.setData({
       likeid: id,
     });
+
     app.request({
       url: 'collection/setLike',
       method: 'GET',

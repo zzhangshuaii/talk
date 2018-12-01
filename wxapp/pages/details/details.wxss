@@ -38,6 +38,7 @@
 }
 .details-images-list{
   padding: 24rpx 0 0 24rpx;
+
 }
 .details-images {
   width: 218rpx;
@@ -46,6 +47,7 @@
   margin-right: 24rpx;
   display: inline-block;
   margin-bottom: 24rpx;
+    border-radius: 8%;
 }
 .details-images image{
   width: 100%;

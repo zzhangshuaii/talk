@@ -10,20 +10,20 @@
     <view class='choice-item flex-col' wx:for="{{special}}">
       <view class='choice-user ' bindtap="goToDetails" data-id="{{item.id}}">
         <view class='choice-user-left '>
-          
-          
-          <view class='choice-user-pic' wx:if="{{item.label_ids=='16,'}}" >
+
+
+          <view class='choice-user-pic' wx:if="{{item.label_ids=='16,'}}">
             <image src='{{item.avatar}}'></image>
           </view>
-                    <view class='choice-user-pic' wx:else >
+          <view class='choice-user-pic' wx:else>
             <image src='/images/hacker.png'></image>
           </view>
 
           <view class='choice-user-name ' wx:if="{{item.label_ids=='16,'}}">
             {{item.nickname}}
           </view>
-                    <view class='choice-user-name ' wx:else>
-           闷声发
+          <view class='choice-user-name ' wx:else>
+            闷声发
           </view>
 
           <view class=' choice-user-right'>
@@ -46,6 +46,11 @@
         </view>
       </view>
       <view class='choice-play flex-grow-0 flex-row flex-x-right'>
+
+        <view class='choice-news flex-grow-0 flex-x-center flex-y-center'>
+          <image src='/images/eye.png'></image>
+          {{item.posts_hits}}
+        </view>
         <view class='choice-news flex-grow-0 flex-x-center flex-y-center'>
           <image src='/images/comment1.png'></image>
           {{item.comment_nums}}

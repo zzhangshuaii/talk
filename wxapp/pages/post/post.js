@@ -69,7 +69,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
@@ -391,6 +391,8 @@ Page({
           header: { "Content-Type": "application/x-www-form-urlencoded" },
           success: function (res) {
               //console.log(typeof res);
+              
+          
             var res = JSON.parse(res.data);
             //console.log(res);
             if (res.code == 0){
@@ -439,6 +441,7 @@ Page({
     
   },
   postASk:function(data){
+    var page=this;
     wx.showLoading({
       title: '正在发帖',
       mask: true,
@@ -455,6 +458,12 @@ Page({
             icon: 'success',
             duration: 2000
           });
+          //page.onShow();
+          page.setData({
+            input_title: "",
+            input_content: ""
+          })
+          
           wx.switchTab({
             url: '/pages/index/index'
           })
