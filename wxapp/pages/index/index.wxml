@@ -1,10 +1,5 @@
 <!--pages/list/list.wxml-->
 
-<van-tabs active="{{ active }}" bind:change="onChange">
-  <van-tab title="最新"></van-tab>
-  <van-tab title="树洞匿名区"></van-tab>
-</van-tabs>
-
 <view class='body'>
   <view class='list'>
     <view class='choice-item flex-col' wx:for="{{special}}">

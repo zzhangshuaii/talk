@@ -3,8 +3,8 @@ const app = getApp();
 var url = '';
 var pageNum = 1;
 var label = '';
-var my_lable=16;
-var  Base64  =  require('js-base64').Base64;
+var my_lable = 16;
+var  Base64  =  require('js-base64').Base64;
 
 Page({
 
@@ -20,17 +20,16 @@ Page({
   // change the tab bar
   onChange(event) {
 
-      my_lable = 16 + event.detail.index;
-      this.onLoad();
+    my_lable = 16 + event.detail.index;
+    this.onLoad();
 
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    
+  onLoad: function(options) {
+
     var page = this;
-    var type = "3";//options.type;
 
     // 初始化data
     this.data.special = []
@@ -38,34 +37,14 @@ Page({
     this.data.showNoContent = false;
 
     pageNum = 1;
-    switch (type) {
-      case "1":
-        url = 'article_list/istjArticle'; // 推荐
-        break;
-      case "2":
-        url = 'article_list/newArticle';  // 最新
-        break;
-      case "3":
-        url = 'article_list/labelArticle';  // 根据标签进入列表
-        label = my_lable;
-        break;
-      default:
-        console.log("default");
-    }
 
-    wx.getStorage({
-      key: 'wxapp_name',
-      success: function (res) {
-        wx.setNavigationBarTitle({
-          title: res.data
-        });
-      }
-    });
+    url = 'article_list/istjArticle'; // 推荐
+    //url = 'article_list/newArticle';  // 最新
     page.getListInfo();
   },
 
   //下拉刷新
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     wx.showNavigationBarLoading() //在标题栏中显示加载
 
     this.onLoad()
@@ -76,35 +55,35 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
 
     var page = this;
@@ -133,13 +112,13 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
   /**
-  * 点赞
-  */
-  saveLike: function (e) {
+   * 点赞
+   */
+  saveLike: function(e) {
     console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLike   " + e.currentTarget.dataset.id)
     var page = this;
     var id = e.currentTarget.dataset.id;
@@ -160,7 +139,7 @@ Page({
       data: {
         post_id: id,
       },
-      success: function (res) {
+      success: function(res) {
 
         wx.showToast({
           title: '点赞成功',
@@ -168,27 +147,29 @@ Page({
           duration: 2000
         });
       },
-      complete: function () {
-        setTimeout(function () {
+      complete: function() {
+        setTimeout(function() {
           // 延长一秒取消加载动画
           wx.hideLoading();
         }, 500);
       }
     });
   },
+
   /**
    * 获取列表数据
    */
-  getListInfo: function () {
+  getListInfo: function() {
 
     var page = this;
     app.request({
       url: url,
       method: 'get',
-      data: { page: pageNum, lable: label },
-      success: function (res) {
-        console.log("--------------index page data-------------------------");
-        console.log(res);
+      data: {
+        page: pageNum,
+        lable: label
+      },
+      success: function(res) {
 
         if (res.code == 0) {
 
@@ -221,7 +202,7 @@ Page({
             title: '提示',
             content: res.msg,
             showCancel: false,
-            success: function (res) {
+            success: function(res) {
               if (res.confirm) {
                 console.log('用户点击确定')
               }
@@ -229,8 +210,8 @@ Page({
           })
         }
       },
-      complete: function () {
-        setTimeout(function () {
+      complete: function() {
+        setTimeout(function() {
           // 延长一秒取消加载动画
           wx.hideLoading();
         }, 1000);
@@ -241,14 +222,14 @@ Page({
   /**
    * 前往文章详情
    */
-  goToDetails: function (e) {
+  goToDetails: function(e) {
     var page = this;
     var id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '/pages/details/details?id=' + id,
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
     });
   },
 });

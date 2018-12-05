@@ -2,11 +2,13 @@
 <view class='post-title flex-row flex-y-center'>
   <input type='text' placeholder-class='place-title' placeholder="标题 支持Emoji" value='{{input_title}}' bindinput="placeTitle"></input>
 </view>
+
 <van-switch-cell
-  title="匿名发表"
+  title="匿名"
   checked="{{ checked }}"
   bind:change="onChange"
 />
+
 <view class='post-content'>
   <textarea placeholder-class='place-title' placeholder="内容 支持Emoji" value='{{input_content}}' bindinput="placeContent"></textarea>
 </view>

@@ -21,7 +21,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "上科大同学圈",
+    "navigationBarTitleText": "上科大Exchange",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -31,19 +31,19 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "同学圈",
+        "text": "Exchange",
         "iconPath": "/images/focus.png",
         "selectedIconPath": "/images/focus1.png"
       },
       {
         "pagePath": "pages/post/post",
         "iconPath": "/images/post.png",
-        "text": "发帖",
+        "text": "Publish",
         "selectedIconPath": "/images/post.png"
       },
       {
         "pagePath": "pages/user/user",
-        "text": "我",
+        "text": "Me",
         "iconPath": "/images/user.png",
         "selectedIconPath": "/images/user1.png"
       }

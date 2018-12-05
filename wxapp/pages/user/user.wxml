@@ -52,7 +52,7 @@
         <image src='/images/my-posts-icon.png'></image>
       </view>
       <view class='flex-grow-1 about-item-title flex-y-center'>
-        我的发帖
+        我的Publish
       </view>
       <view class='flex-grow-0 about-bubble flex-y-center'>
         {{posts_num}}

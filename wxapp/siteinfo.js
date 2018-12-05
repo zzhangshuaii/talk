@@ -1,7 +1,7 @@
 var siteinfo = {
-  'uniacid': '2',
-    'acid': '2',
-    'version': '1.8.0',
+  'uniacid': '3',
+    'acid': '3',
+    'version': '1.0',
     'siteroot': 'https://w.sxmdyswkj.cn/app/index.php',
     
 };

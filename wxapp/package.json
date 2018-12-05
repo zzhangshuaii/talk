@@ -7,8 +7,9 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "js-base64": "^2.4.9"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
