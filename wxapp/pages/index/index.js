@@ -38,7 +38,7 @@ Page({
 
     pageNum = 1;
 
-    url = 'article_list/istjArticle'; // 推荐
+    url = 'article_list/backup_istjArticle'; // 推荐
     //url = 'article_list/newArticle';  // 最新
     page.getListInfo();
   },
