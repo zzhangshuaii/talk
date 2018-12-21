@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "Publish",
+  "navigationBarTitleText": "发布",
   "usingComponents": {
     "van-switch-cell": "/dist/switch-cell/index"
   }

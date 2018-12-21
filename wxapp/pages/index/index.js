@@ -15,6 +15,7 @@ Page({
     special: [],
     showLoading: false,
     showNoContent: false,
+    top_article:[]
   },
 
   // change the tab bar
@@ -38,9 +39,10 @@ Page({
 
     pageNum = 1;
 
-    url = 'article_list/backup_istjArticle'; // 推荐
-    //url = 'article_list/newArticle';  // 最新
+    //url = 'article_list/istjArticle'; // 推荐
+    url = 'article_list/newArticle';  // 最新
     page.getListInfo();
+    page.getTop();
   },
 
   //下拉刷新
@@ -219,6 +221,62 @@ Page({
     });
   },
 
+  /**
+   * 获取置顶
+   */
+  getTop: function () {
+
+    var page = this;
+    app.request({
+      url: 'article_list/topArticle',
+      method: 'get',
+      data: {
+        page: 1,
+        lable: label
+      },
+      success: function (res) {
+
+        if (res.code == 0) {
+
+          for (var each in res.data.list) {
+            var post = res.data.list[each];
+            //console.log();
+            post.posts_title = Base64.decode(post.posts_title);
+            post.posts_content = Base64.decode(post.posts_content);
+            res.data.list[each] = post;
+          }
+
+          var top_article = page.data.top_article=res.data.list;
+
+          console.log("--------------top-------------------------");
+          console.log(top_article);
+
+          page.setData({
+            top_article: top_article,
+
+          });
+
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: res.msg,
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              }
+            }
+          })
+        }
+      },
+      complete: function () {
+        setTimeout(function () {
+          // 延长一秒取消加载动画
+          wx.hideLoading();
+        }, 1000);
+      }
+    });
+  },
   /**
    * 前往文章详情
    */

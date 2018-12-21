@@ -1,0 +1,16 @@
+<van-row>
+  <van-col span="8">span: 8asdasdasdasdasdasd</van-col>
+  <van-col span="8">
+
+    <van-row>
+      <van-col span="8">span: 8asdasdasdasdasdasd</van-col>
+
+    </van-row>
+    <van-row>
+      <van-col span="8">span: 8asdasdasdasdasd</van-col>
+
+    </van-row>
+
+  </van-col>
+  <van-col span="8" style="background:#000; ">span: 8asdasdasdasdasdasdasdasd</van-col>
+</van-row>

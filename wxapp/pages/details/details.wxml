@@ -52,7 +52,7 @@
   <view class='details-images-list'>
     <block wx:for="{{detailsImg}}">
       <view class='details-images' data-key='{{index}}' bindtap='showBigImages'>
-        <image src='{{item}}'></image>
+        <image src='{{item}}' mode='aspectFill'></image>
       </view>
     </block>
   </view>

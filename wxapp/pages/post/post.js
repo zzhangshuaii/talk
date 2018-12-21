@@ -464,8 +464,8 @@ Page({
             input_content: ""
           })
           
-          wx.switchTab({
-            url: '/pages/index/index'
+          wx.reLaunch({
+            url: '/pages/post/post'
           })
         } else {
           wx.showModal({

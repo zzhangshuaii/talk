@@ -16,7 +16,8 @@
     "pages/appreciate-list/appreciate-list",
     "pages/wallet/wallet",
     "pages/web/web",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/getup/getup"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -38,12 +39,12 @@
       {
         "pagePath": "pages/post/post",
         "iconPath": "/images/post.png",
-        "text": "Publish",
+        "text": "发布",
         "selectedIconPath": "/images/post.png"
       },
       {
         "pagePath": "pages/user/user",
-        "text": "Me",
+        "text": "我的",
         "iconPath": "/images/user.png",
         "selectedIconPath": "/images/user1.png"
       }

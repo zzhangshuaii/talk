@@ -18,10 +18,10 @@
     padding-right: 24rpx;
 }
 
-
 .choice-item-right image {
     /* width: 260rpx;
   height:200rpx; */
+    
     height: 140rpx;
     width: 200rpx;
     margin-bottom: 15rpx;
@@ -129,4 +129,10 @@
     color: #8e8e8e;
     padding: 30rpx 0;
     background-color: #fff;
+}
+
+.top{
+  padding-left: 40%;
+  color: #f23c34;
+  
 }

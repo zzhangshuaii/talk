@@ -35,7 +35,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
@@ -48,6 +48,11 @@
 					"name": "kantix",
 					"pathName": "pages/kantie/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "getup",
+					"pathName": "pages/getup/getup"
 				}
 			]
 		}

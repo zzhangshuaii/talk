@@ -2,6 +2,65 @@
 
 <view class='body'>
   <view class='list'>
+
+    <!--top-->
+    <view class='choice-item flex-col' style='background-color: #fffbe6;' wx:for="{{top_article}}">
+      <view class='choice-user ' bindtap="goToDetails" data-id="{{item.id}}">
+        <view class='choice-user-left '>
+
+
+          <view class='choice-user-pic' wx:if="{{item.label_ids=='16,'}}">
+            <image src='{{item.avatar}}'></image>
+          </view>
+          <view class='choice-user-pic' wx:else>
+            <image src='/images/hacker.png'></image>
+          </view>
+
+          <view class='choice-user-name ' wx:if="{{item.label_ids=='16,'}}">
+            {{item.nickname}}
+          </view>
+          <view class='choice-user-name ' wx:else>
+            闷声发
+          </view>
+
+          <view class=' choice-user-right'>
+            {{item.word_time}}<span class='top'>TOP</span>
+          </view>
+
+        </view>
+      </view>
+      <view class='flex-grow-1 flex-row' bindtap="goToDetails" data-id="{{item.id}}">
+        <view class='flex-grow-1 choice-item-left flex-col'>
+          <view class='choice-item-title flex-grow-1 flex-row'>
+            {{item.posts_title}}
+          </view>
+          <view class='choice-item-smail flex-grow-0 flex-row' wx:if="{{item.admin_id != 1}}">
+            {{item.posts_content}}
+          </view>
+        </view>
+        <view class='choice-item-right flex-grow-0' wx:if="{{item.thum_img}}">
+          <image src='{{item.thum_img}}' mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class='choice-play flex-grow-0 flex-row flex-x-right'>
+
+        <view class='choice-news flex-grow-0 flex-x-center flex-y-center'>
+          <image src='/images/eye.png'></image>
+          {{item.posts_hits}}
+        </view>
+        <view class='choice-news flex-grow-0 flex-x-center flex-y-center'>
+          <image src='/images/comment1.png'></image>
+          {{item.comment_nums}}
+        </view>
+        <view class='choice-fabulous flex-grow-0 flex-x-center flex-y-center' data-id="{{item.id}}" bindtap="saveLike">
+          <image src='/images/heart1.png' wx:if="{{likeid == item.id}}"></image>
+          <image src='/images/heart.png' wx:else></image>
+          {{item.posts_like}}
+        </view>
+      </view>
+    </view>
+
+    <!--main-->
     <view class='choice-item flex-col' wx:for="{{special}}">
       <view class='choice-user ' bindtap="goToDetails" data-id="{{item.id}}">
         <view class='choice-user-left '>
@@ -37,7 +96,7 @@
           </view>
         </view>
         <view class='choice-item-right flex-grow-0' wx:if="{{item.thum_img}}">
-          <image src='{{item.thum_img}}'></image>
+          <image src='{{item.thum_img}}' mode="aspectFill"></image>
         </view>
       </view>
       <view class='choice-play flex-grow-0 flex-row flex-x-right'>

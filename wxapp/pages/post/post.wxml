@@ -1,6 +1,6 @@
 
 <view class='post-title flex-row flex-y-center'>
-  <input type='text' placeholder-class='place-title' placeholder="标题 支持Emoji" value='{{input_title}}' bindinput="placeTitle"></input>
+  <input type='text' placeholder-class='place-title' placeholder="标题" value='{{input_title}}' bindinput="placeTitle"></input>
 </view>
 
 <van-switch-cell
@@ -10,7 +10,7 @@
 />
 
 <view class='post-content'>
-  <textarea placeholder-class='place-title' placeholder="内容 支持Emoji" value='{{input_content}}' bindinput="placeContent"></textarea>
+  <textarea placeholder-class='place-title' placeholder="内容" value='{{input_content}}' bindinput="placeContent"></textarea>
 </view>
 
 
