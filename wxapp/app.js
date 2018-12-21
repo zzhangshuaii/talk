@@ -2,13 +2,24 @@
 var url = 'http://evan.tunnel.qydev.com/we7local/addons/sl_wforum/tp/public/index.php/api/';
 var store_id = 1;
 App({
+
   onLaunch: function () {
     this.setApi();
     this.getUserInfo(this);
+    if (!wx.cloud) {
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
+    } else {
+      wx.cloud.init({
+        traceUser: true,
+      })
+    }
+
   },
   onShow: function () {
 
     this.login();
+
+
   },
   /**
    * 获取用户信息逻辑操作
@@ -32,6 +43,9 @@ App({
     });
   },
   login_1: function () {
+
+    var that=this
+
     wx.login({
       success: function (res) {
         console.log(res);
@@ -39,6 +53,7 @@ App({
           var code = res.code
           wx.getUserInfo({
             success: function (res) {
+              
               console.log(res);
               var userInfo = {};
               userInfo.userInfo = res.userInfo
@@ -96,7 +111,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+
+
   },
   // 跳转封装
   redirect: function (url, param) {
@@ -162,6 +178,7 @@ App({
   },
   getUrl:function(){
     return url;
-  }
+  },
+
   
 })

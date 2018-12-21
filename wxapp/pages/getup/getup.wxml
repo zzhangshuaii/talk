@@ -1,16 +1,13 @@
-<van-row>
-  <van-col span="8">span: 8asdasdasdasdasdasd</van-col>
-  <van-col span="8">
+<view class='main'>
+  <van-row>
+    <van-col span="8" offset="8">
+      <button disabled="{{disabled}}" class='button'type="primary" size='default' bindtap="getup">点击签到</button>
+    </van-col>
+  </van-row>
 
-    <van-row>
-      <van-col span="8">span: 8asdasdasdasdasdasd</van-col>
-
-    </van-row>
-    <van-row>
-      <van-col span="8">span: 8asdasdasdasdasd</van-col>
-
-    </van-row>
-
-  </van-col>
-  <van-col span="8" style="background:#000; ">span: 8asdasdasdasdasdasdasdasd</van-col>
-</van-row>
+  <van-row>
+    <van-col span="12" offset="6">
+      <input class='input'placeholder="写句话吧~" bindinput='input' maxlength="20"auto-focus />
+    </van-col>
+  </van-row>
+</view>

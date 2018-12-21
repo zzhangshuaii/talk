@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "签到",
   "enablePullDownRefresh": true,
-  "backgroundColor": "#fff",
+  "backgroundColor": "#ddd",
   "usingComponents": {
     "van-row": "/dist/row/index",
     "van-col": "/dist/col/index",
