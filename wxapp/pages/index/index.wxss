@@ -1,138 +1,130 @@
 /* pages/list/list.wxss */
+
 .choice-item {
-    padding: 24rpx 24rpx 0 24rpx;
-
-    margin: 0 0 12rpx;
-    border-color: #e6e6e6;
-    border-style: solid;
-    background: #fff;
-
-    border-image: none;
-    border-top-width: 1rpx;
-    border-right-width: 0;
-    border-bottom-width: 1rpx;
-    border-left-width: 0;
-
-        padding-top: 30rpx;
-    padding-left: 24rpx;
-    padding-right: 24rpx;
+  padding: 24rpx 24rpx 0 24rpx;
+  margin: 0 0 12rpx;
+  border-color: #e6e6e6;
+  border-style: solid;
+  background: #fff;
+  border-image: none;
+  border-top-width: 1rpx;
+  border-right-width: 0;
+  border-bottom-width: 1rpx;
+  border-left-width: 0;
+  padding-top: 30rpx;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
 }
 
 .choice-item-right image {
-    /* width: 260rpx;
+  /* width: 260rpx;
   height:200rpx; */
-    
-    height: 140rpx;
-    width: 200rpx;
-    margin-bottom: 15rpx;
-    border-radius: 8%;
+  height: 140rpx;
+  width: 200rpx;
+  margin-bottom: 15rpx;
+  border-radius: 8%;
 }
 
 .choice-item-title {
-    color: #222;
-    font-size: 30rpx;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-    max-height: 120rpx;
-
+  color: #222;
+  font-size: 30rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  max-height: 120rpx;
 }
 
 .choice-item-smail {
-    font-size: 10pt;
-    color: #757575;
-    max-height: 40rpx;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    overflow: hidden;
-    width: 100%;
-    margin-top: 10rpx;
-    margin-bottom: 20rpx;
+  font-size: 10pt;
+  color: #757575;
+  max-height: 40rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
 }
 
 .choice-user-pic image {
-    float: left;
-    width: 80rpx;
-    height: 80rpx;
-    border-radius: 50%;
-    margin-right: 25rpx;
+  float: left;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 25rpx;
 }
 
 .choice-user-name {
-    font-size: 32rpx;
-    margin-right: 10rpx;
-        color: #000;
+  font-size: 32rpx;
+  margin-right: 10rpx;
+  color: #000;
 }
 
 .choice-user-level {
-    font-size: 7pt;
-    color: #8e8e8e;
+  font-size: 7pt;
+  color: #8e8e8e;
 }
 
 .choice-user-right {
-    font-size: 24rpx;
-    color: #939393;
+  font-size: 24rpx;
+  color: #939393;
 }
 
 .choice-user {
-    margin-bottom: 18rpx;
+  margin-bottom: 18rpx;
 }
 
 .choice-item-left {
-   margin-left: 20rpx;
-   margin-top: 10rpx; 
-   margin-right: 10rpx;
-
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  margin-right: 10rpx;
 }
 
 .choice-play image {
-    width: 40rpx;
-    height: 40rpx;
-    margin-right: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
 }
 
 .choice-play {
-    font-size: 8pt;
-    /* height: 80rpx;
+  font-size: 8pt;
+  /* height: 80rpx;
   border-top: 1rpx solid #eaedee;
   margin-top:20rpx;  */
-    padding: 24rpx 0;
-
-        border-image: none;
-    border-top-width: 1rpx;
-    border-right-width: 0;
-    border-bottom-width: 0;
-    border-left-width: 0;
-  
-        border-color: #e6e6e6;
-    border-style: solid;
-    height: 25rpx;
-
+  padding: 24rpx 0;
+  border-image: none;
+  border-top-width: 1rpx;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-color: #e6e6e6;
+  border-style: solid;
+  height: 25rpx;
 }
 
 .choice-play view {
-    margin-right: 24rpx;
+  margin-right: 24rpx;
 }
 
 /* 底部加载动画 */
+
 .show-loading image {
-    height: 40rpx;
-    width: 100%;
-    padding: 30rpx 0;
-    background-color: #ffffff;
+  height: 40rpx;
+  width: 100%;
+  padding: 30rpx 0;
+  background-color: #fff;
 }
 
 .show-no-content {
-    font-size: 10pt;
-    color: #8e8e8e;
-    padding: 30rpx 0;
-    background-color: #fff;
+  font-size: 10pt;
+  color: #8e8e8e;
+  padding: 30rpx 0;
+  background-color: #fff;
 }
 
-.top{
+.top {
   padding-left: 40%;
   color: #f23c34;
-  
 }

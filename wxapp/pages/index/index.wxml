@@ -1,4 +1,9 @@
 <!--pages/list/list.wxml-->
+<van-tabs active="{{ active }}" bind:change="switchbar">
+  <van-tab title="主页"></van-tab>
+  <van-tab title="早起排行榜"></van-tab>
+  <van-tab title="熬夜排行榜"></van-tab>
+</van-tabs>
 
 <view class='body'>
   <view class='list'>

@@ -2,7 +2,7 @@
 
     <van-row>
     <van-col span="12" offset="6">
-      <view class="textcenter" >每天5:00~9:00</view>
+      <view class="textcenter"> 每天00:00~5:00</view>
     </van-col>
   </van-row>
 

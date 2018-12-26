@@ -290,4 +290,16 @@ Page({
       complete: function(res) {},
     });
   },
+  switchbar:function(e){
+    if(e.detail.index==1){
+      wx.navigateTo({
+        url: '/pages/getup/getup'
+      });
+    }
+    if (e.detail.index == 2) {
+      wx.navigateTo({
+        url: '/pages/sleep/sleep'
+      });
+    }
+  }
 });

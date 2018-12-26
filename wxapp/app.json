@@ -1,5 +1,5 @@
 {
-  "cloud":true,
+  "cloud": true,
   "pages": [
     "pages/index/index",
     "pages/kantie/index",
@@ -18,7 +18,8 @@
     "pages/wallet/wallet",
     "pages/web/web",
     "pages/login/login",
-    "pages/getup/getup"
+    "pages/getup/getup",
+    "pages/sleep/sleep"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -49,6 +50,7 @@
         "iconPath": "/images/user.png",
         "selectedIconPath": "/images/user1.png"
       }
+      
     ]
   }
 }

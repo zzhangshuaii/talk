@@ -17,13 +17,13 @@ Page({
   data: {
     disabled: true,
     signin: "点击签到",
-    getuplist:[]
+    getuplist: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     console.log("onload")
     var that = this
     // get openid
@@ -36,8 +36,8 @@ Page({
         // find if user exists
 
         db.collection('users').where({
-            _openid: openid
-          })
+          _openid: openid
+        })
           .count({
             success(res) {
 
@@ -45,7 +45,7 @@ Page({
               var ymy = res.total
 
               wx.getUserInfo({
-                success: function(res) {
+                success: function (res) {
                   var userInfo = res.userInfo
 
                   console.log(userInfo.nickName)
@@ -95,51 +95,52 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
-    var that=this
+    var that = this
     // get getup list
-    var t=new Date()
+    var t = new Date()
     t.setHours(0)
+    t.setMinutes(0)
+    t.setSeconds(0)
 
     const _ = db.command
-    db.collection('getup')
+    db.collection('sleep')
       .where({
         time: _.gt(t)
       })
-      .orderBy('time','asc')
+      .orderBy('time', 'desc')
       .get({
         success(res) {
-          
-          console.log("getup list")
+
+          console.log("sleep list")
           console.log(res.data)
 
           // simplify the time
-          res.data.forEach(item=>{
-            var tt=item.time
-            item.simpletime=tt.getHours()+'点'+tt.getMinutes()+'分'+tt.getSeconds()+'秒'
+          res.data.forEach(item => {
+            var tt = item.time
+            item.simpletime = tt.getHours() + '点' + tt.getMinutes() + '分' + tt.getSeconds() + '秒'
           })
 
           that.setData({
-            getuplist:res.data
+            getuplist: res.data
           })
         }
       })
-    
     this.checkgetup()
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
     // get getup list
 
   },
@@ -147,37 +148,37 @@ Page({
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   },
 
   // I get up!
-  getup: function(e) {
+  getup: function (e) {
 
     const that = this;
     const db = wx.cloud.database()
-    db.collection('getup').add({
+    db.collection('sleep').add({
 
       data: {
         nickName: nickName,
@@ -198,23 +199,23 @@ Page({
     })
   },
 
-  input: function(e) {
+  input: function (e) {
     message = e.detail.value;
   },
 
-  checkgetup: function() {
+  checkgetup: function () {
 
     var that = this
     var t = new Date()
 
-    if (t.getHours() <= 5) {
+    if (t.getHours() >= 20) {
 
       that.setData({
         signin: "还未开始"
       })
       return
     }
-    if (t.getHours() >= 9) {
+    if (t.getHours() >= 5) {
 
       that.setData({
         signin: "今日已结束"
@@ -223,10 +224,12 @@ Page({
     }
 
     t.setHours(0)
+    t.setMinutes(0)
+    t.setSeconds(0)
     // console.log("checkgetup")
     // console.log(Date())
     const _ = db.command
-    db.collection('getup')
+    db.collection('sleep')
       .where({
         _openid: openid,
         time: _.gt(t)
@@ -235,14 +238,14 @@ Page({
         success(res) {
 
           console.log(res.total)
-          
-          if(res.total==0){
+
+          if (res.total == 0) {
             that.setData({
               disabled: false
             })
-          }else{
+          } else {
             that.setData({
-              signin:"已签到",
+              signin: "已签到",
               disabled:true
             })
           }
